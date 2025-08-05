@@ -394,8 +394,8 @@ const HelpWith = () => {
                       <div className="flex flex-col w-full text-center">
                           {/* Headline - Fixed alignment */}
                           <h1 className="text-4xl sm:text-5xl font-semi text-white mt-2 max-w-5xl leading-tight">
-                              <span className="inline-block lg:-translate-x-80">We use the latest technologies</span><br className="hidden sm:block" />
-                              <span className="inline-block lg:-translate-x-70">to build future-proof AI solutions.</span>
+                              <span className="inline-block lg:-translate-x-60">We use the latest technologies</span><br className="hidden sm:block" />
+                              <span className="inline-block lg:-translate-x-55">to build future-proof AI solutions.</span>
                           </h1>
                       </div>
 
