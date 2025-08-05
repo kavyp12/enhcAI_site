@@ -11,7 +11,13 @@ const fontStyles = `
 `;
 
 interface Project {
-  id: string; year: number; client: string; title: string; imageUrl: string; column: 'left' | 'right'; tags: string[];
+  id: string;
+  year: number;
+  client: string;
+  title: string;
+  imageUrl: string;
+  column: 'left' | 'right';
+  tags: string[];
 }
 
 function ProjectCard({ project }: { project: Project }) {
@@ -19,11 +25,17 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div>
       <div className="group relative w-full min-h-[400px] sm:min-h-[480px] overflow-hidden rounded-2xl cursor-pointer">
-        <img src={project.imageUrl} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+        <img
+          src={project.imageUrl}
+          alt={project.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+        />
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
         <div className="absolute top-4 left-4 lg:top-8 lg:left-8 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
           {project.tags.map((tag: string) => (
-            <span key={tag} className="bg-white/10 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full product-sans">{tag}</span>
+            <span key={tag} className="bg-white/10 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full product-sans">
+              {tag}
+            </span>
           ))}
         </div>
         {hasSpecialLogo && (
@@ -35,8 +47,12 @@ function ProjectCard({ project }: { project: Project }) {
         )}
       </div>
       <div className="pt-6 text-white">
-        <p className="text-sm text-gray-400 product-sans">{project.year} • {project.client}</p>
-        <h3 className="text-xl lg:text-2xl font-medium mt-2 leading-tight product-sans">{project.title}</h3>
+        <p className="text-sm text-gray-400 product-sans">
+          {project.year} • {project.client}
+        </p>
+        <h3 className="text-xl lg:text-2xl font-medium mt-2 leading-tight product-sans">
+          {project.title}
+        </h3>
       </div>
     </div>
   );
@@ -56,15 +72,27 @@ export default function App() {
     <>
       <style dangerouslySetInnerHTML={{ __html: fontStyles }} />
       <section className="bg-black text-white py-16 px-4 sm:px-8 lg:px-16 product-sans">
+        
+        {/* --- CHANGE 1: Mobile-Only Header --- */}
+        {/* This header is visible on mobile and hidden on large screens (lg:hidden) */}
+        <div className="lg:hidden mb-12">
+          <p className="text-sm text-gray-400 product-sans">• Our Work</p>
+          <h2 className="text-4xl sm:text-5xl font-bold mt-4 leading-tight product-sans">Take a look at<br />our AI projects</h2>
+        </div>
+
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 items-start">
           <div className="flex flex-col gap-16">
             {leftColumnProjects.map(project => <ProjectCard key={project.id} project={project} />)}
           </div>
           <div className="flex flex-col gap-16">
-            <div className="lg:pt-8">
+
+            {/* --- CHANGE 2: Desktop-Only Header --- */}
+            {/* This header is hidden by default and becomes visible as a flex container on large screens (hidden lg:flex) */}
+            <div className="hidden lg:flex lg:flex-col lg:pt-8">
               <p className="text-sm text-gray-400 product-sans">• Our Work</p>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-4 leading-tight product-sans">Take a look at<br />our AI projects</h2>
             </div>
+            
             {rightColumnProjects.map(project => <ProjectCard key={project.id} project={project} />)}
           </div>
         </div>
