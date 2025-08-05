@@ -255,12 +255,10 @@ export default function App() {
     { name: 'marketing', count: projectData.filter(p => p.category === 'marketing').length },
   ];
 
-  // Filter projects based on selected category
   const filteredProjects = selectedCategory.toLowerCase() === 'explore all' 
     ? projectData 
     : projectData.filter(project => project.category.toLowerCase() === selectedCategory.toLowerCase());
 
-  // For filtered results, arrange projects in left-right alternating pattern
   const arrangedProjects = selectedCategory.toLowerCase() === 'explore all' 
     ? {
         left: filteredProjects.filter(p => p.column === 'left'),
@@ -277,42 +275,59 @@ export default function App() {
     <>
       <Navbar />
       <section className="bg-black text-white pt-24 sm:pt-32 pb-16 px-4 sm:px-8 lg:px-16">
-        <div className="max-w-screen-2xl mx-auto">
-          <ProjectFilters 
+<div className="max-w-screen-2xl mx-auto mb-24">
+            <ProjectFilters 
             categories={categoryData} 
             selectedCategory={selectedCategory}
             onCategorySelect={setSelectedCategory}
           />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 items-start mb-12">
+
+          {/* START: CHANGE 1 - Add a mobile-only heading */}
+          {/* This heading block is only visible on screens smaller than the 'lg' breakpoint */}
+          <div className="lg:hidden mb-12">
+            <p className="text-sm text-gray-400">• Our Work</p>
+            <h2 
+              className="text-4xl sm:text-6xl font-bold mt-4 leading-tight"
+              dangerouslySetInnerHTML={{ __html: dynamicHeading }}
+            />
+          </div>
+          {/* END: CHANGE 1 */}
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 items-start">
             <div className="flex flex-col gap-16">
               {arrangedProjects.left.map(project => (
                 <ProjectCard key={project.id} project={project} />
               ))}
             </div>
             <div className="flex flex-col gap-16">
-              <div className="lg:pt-8 order-first lg:order-none mb-12 lg:mb-0">
+
+              {/* START: CHANGE 2 - Modify the original heading to be desktop-only */}
+              {/* This heading block is now hidden on mobile and only appears on 'lg' screens and larger */}
+              <div className="hidden lg:block lg:pt-8 mb-12 lg:mb-0">
                 <p className="text-sm text-gray-400">• Our Work</p>
                 <h2 
                   className="text-4xl sm:text-6xl font-bold mt-4 leading-tight"
                   dangerouslySetInnerHTML={{ __html: dynamicHeading }}
                 />
               </div>
+              {/* END: CHANGE 2 */}
+
               {arrangedProjects.right.map(project => (
                 <ProjectCard key={project.id} project={project} />
               ))}
             </div>
           </div>
-                 </div>
+        </div>
 
-         <style jsx>{`
-           @import url('https://fonts.googleapis.com/css2?family=Product+Sans&display=swap');
+        <style jsx>{`
+          @import url('https://fonts.googleapis.com/css2?family=Product+Sans&display=swap');
 
-           section, div, p, h1, h2, h3, span, button {
-             font-family: 'Product Sans', sans-serif;
-           }
-         `}</style>
-       <Footer />
-       </section>
-     </>
-   );
- }
+          section, div, p, h1, h2, h3, span, button {
+            font-family: 'Product Sans', sans-serif;
+          }
+        `}</style>
+      <Footer />
+      </section>
+    </>
+  );
+}
