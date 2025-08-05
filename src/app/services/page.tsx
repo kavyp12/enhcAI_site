@@ -143,39 +143,45 @@ const ServicesPage = () => {
   return (
     <>
       <Navbar />
-      <main className="bg-black text-white min-h-screen p-8 sm:p-16 md:p-24 font-sans">
-        <div className="mb-16">
+      {/* Adjusted main padding for mobile to prevent navbar overlap */}
+      <main className="bg-black text-white min-h-screen px-6 sm:px-16 md:px-24 pt-28 sm:pt-24 font-sans">
+        <div className="mb-12 md:mb-16">
           <div className="flex items-center space-x-2 text-white text-base">
             <span className="text-lg">•</span>
             <span>Services</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* Adjusted grid gap and font sizes for mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           <div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-tight">
               We're an AI company with cutting-edge expertise
             </h1>
           </div>
 
-          <div className="lg:justify-self-end lg:self-end translate-y-38">
-            <p className="text-2xl md:text-3xl lg:text-4xl max-w-lg text-white leading-tight font-normal">
+          {/* Adjusted positioning and font size for mobile */}
+          <div className="lg:justify-self-end lg:self-end lg:translate-y-38 mt-8 lg:mt-0">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl max-w-lg text-white leading-tight font-normal">
               We bring our passion for intelligent solutions to forward-thinking businesses and deliver AI that transforms.
             </p>
           </div>
         </div>
 
-        <div className="w-full h-px bg-gray-800 mt-24 mb-16 translate-y-40"></div>
+        {/* Adjusted margins and removed translate-y on mobile */}
+        <div className="w-full h-px bg-gray-800 mt-16 lg:mt-24 mb-12 lg:mb-16 lg:translate-y-40"></div>
+
+        {/* --- All Service Sections --- */}
+        {/* The following sections have adjusted heading sizes and top padding for better mobile display */}
 
         {/* AI Development Section */}
-        <div className="pt-24">
-          <h2 className="text-[6rem] sm:text-[8rem] md:text-[10rem] font-bold leading-none tracking-tighter">
+        <div className="pt-16 lg:pt-24">
+          <h2 className="text-5xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold leading-none tracking-tighter">
             AI Development
           </h2>
-
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <div className="mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-16">
             <div>
-              <p className="text-lg md:text-xl max-w-sm leading-relaxed font-medium">
+              <p className="text-lg max-w-sm leading-relaxed font-medium">
                 AI engineers and data scientists in-house building intelligent systems tailored to your business needs.
               </p>
             </div>
@@ -193,17 +199,16 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        <div className="w-full h-px bg-gray-800 mt-24 mb-16"></div>
+        <div className="w-full h-px bg-gray-800 mt-24 mb-12 md:mb-16"></div>
 
         {/* Consulting Section */}
-        <div className="pt-24">
-          <h2 className="text-[6rem] sm:text-[8rem] md:text-[10rem] font-bold leading-none tracking-tighter">
+        <div className="pt-16 lg:pt-24">
+          <h2 className="text-5xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold leading-none tracking-tighter">
             Consulting
           </h2>
-
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <div className="mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-16">
             <div>
-              <p className="text-lg md:text-xl max-w-sm leading-relaxed font-medium">
+              <p className="text-lg max-w-sm leading-relaxed font-medium">
                 Strategic AI consultants helping you identify opportunities and implement AI-driven transformation.
               </p>
             </div>
@@ -221,17 +226,16 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        <div className="w-full h-px bg-gray-800 mt-24 mb-16"></div>
+        <div className="w-full h-px bg-gray-800 mt-24 mb-12 md:mb-16"></div>
 
         {/* Solutions Section */}
-        <div className="pt-24">
-          <h2 className="text-[6rem] sm:text-[8rem] md:text-[10rem] font-bold leading-none tracking-tighter">
+        <div className="pt-16 lg:pt-24">
+          <h2 className="text-5xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold leading-none tracking-tighter">
             Solutions
           </h2>
-
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <div className="mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-16">
             <div>
-              <p className="text-lg md:text-xl max-w-sm leading-relaxed font-medium">
+              <p className="text-lg max-w-sm leading-relaxed font-medium">
                 End-to-end AI solutions from concept to deployment, powered by the latest in artificial intelligence.
               </p>
             </div>
@@ -249,17 +253,16 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        <div className="w-full h-px bg-gray-800 mt-24 mb-16"></div>
+        <div className="w-full h-px bg-gray-800 mt-24 mb-12 md:mb-16"></div>
 
         {/* Support Section */}
-        <div className="pt-24">
-          <h2 className="text-[6rem] sm:text-[8rem] md:text-[10rem] font-bold leading-none tracking-tighter">
+        <div className="pt-16 lg:pt-24">
+          <h2 className="text-5xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-bold leading-none tracking-tighter">
             Support
           </h2>
-
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <div className="mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-16">
             <div>
-              <p className="text-lg md:text-xl max-w-sm leading-relaxed font-medium">
+              <p className="text-lg max-w-sm leading-relaxed font-medium">
                 Comprehensive support services ensuring your AI systems perform optimally and evolve with your business.
               </p>
             </div>
@@ -277,20 +280,19 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        <div className="w-full h-px bg-gray-800 mt-24 mb-16"></div>
+        <div className="w-full h-px bg-gray-800 mt-24 mb-12 md:mb-16"></div>
 
         {/* Latest from our studio Section */}
-        <section className="pt-24 pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+        <section className="pt-16 lg:pt-24 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             {/* Left Column */}
             <div className="lg:col-span-4 flex flex-col justify-between h-full">
               <div>
-                {/* <p className="font-semibold tracking-wider text-gray-400 text-left">• Latest from our studio</p> */}
-                <h2 className="text-5xl lg:text-6xl font-medium mt-4 leading-tight text-left">
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium mt-4 leading-tight text-left">
                   Latest from our studio
                 </h2>
               </div>
-              <div className="flex gap-8 mt-16">
+              <div className="flex gap-8 mt-8 lg:mt-16">
                 <button className="blog-swiper-prev p-3 rounded-full bg-[#222222] hover:bg-[#333333] transition-colors text-white disabled:opacity-50">
                   <ArrowLeft size={24} />
                 </button>
@@ -332,7 +334,6 @@ const ServicesPage = () => {
                             e.currentTarget.src = 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
                           }}
                         />
-                        {/* Green arrow overlay */}
                         <div className="absolute top-4 left-4 w-12 h-12 bg-[#C5F277] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <svg
                             width="20"

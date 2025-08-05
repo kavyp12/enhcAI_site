@@ -14,6 +14,11 @@ export default function Aboutus() {
         .right-text { animation: slideRightToLeft 20s linear infinite; }
         @keyframes slideLeftToRight { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
         @keyframes slideRightToLeft { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+
+@media (max-width: 640px) {
+    .animate-scroll-left { animation: scroll-left 8s linear infinite; } /* Faster on mobile */
+    .animate-scroll-right { animation: scroll-right 8s linear infinite; } /* Faster on mobile */
       `}</style>
       
       <section className="bg-black text-white flex items-center px-6 lg:px-12 py-20 md:h-[600px]">

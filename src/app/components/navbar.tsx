@@ -2,13 +2,18 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import path from 'path';
+// Note: 'path' import is not used in React components and can be removed.
+// import path from 'path'; 
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // --- NEW STATE for mobile services view ---
+  const [mobileServicesView, setMobileServicesView] = useState(false); 
+
   const lastScrollY = useRef(0);
   const servicesRef = useRef(null);
 
@@ -45,6 +50,11 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  // --- HELPER FUNCTION to close the mobile menu completely ---
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setMobileServicesView(false); // Also reset the services view
+  };
 
   // Services dropdown data
   const services = [
@@ -85,7 +95,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 flex justify-center transition-all duration-500 ease-out ${
-        isScrolled ? 'pt-0 md:pt-6' : 'pt-0' // Adjusted padding for mobile
+        isScrolled ? 'pt-0 md:pt-6' : 'pt-0'
       } ${
         isVisible || isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-[150%]'
       }`}
@@ -94,7 +104,7 @@ export default function Navbar() {
         className={`flex items-center justify-between pointer-events-auto transition-all duration-500 ease-out ${
           isScrolled
             ? 'w-full md:w-[95%] md:max-w-4xl bg-black/60 md:bg-black/20 backdrop-blur-xl md:border md:border-white/30 rounded-none md:rounded-full px-6 py-4 md:py-3 shadow-2xl shadow-black/20'
-            : 'w-full bg-black/50 md:bg-transparent md:backdrop-blur-sm px-8 py-4 rounded-none' // Added background for mobile
+            : 'w-full bg-black/50 md:bg-transparent md:backdrop-blur-sm px-8 py-4 rounded-none'
         }`}
       >
         {/* Logo */}
@@ -180,7 +190,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Button (Hamburger) */}
+        {/* --- MODIFIED Mobile Menu Button (Hamburger) --- */}
         <div className="md:hidden flex items-center">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="z-50" aria-label="Toggle Menu">
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,29 +200,71 @@ export default function Navbar() {
         </div>
       </nav>
       
-      {/* Mobile Menu Overlay */}
-      <div className={`md:hidden fixed inset-0 bg-[#111111] w-full h-screen transition-transform duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
-          <Link href="/services" className="text-white text-3xl font-light hover:text-green-400 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
-          {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className="text-white text-3xl font-light hover:text-green-400 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-              {link.label}
-            </Link>
-          ))}
-          {/* "Start a project" button below all other elements */}
-          <div className="absolute bottom-24">
-            <button className="bg-green-400 text-black flex items-center space-x-2 hover:bg-green-500 transition-all duration-300 ease-out px-8 py-3 rounded-full text-base">
-              <span>Start a project</span>
-              <span>&rarr;</span>
+      {/* --- RESTRUCTURED Mobile Menu Overlay --- */}
+      <div className={`md:hidden fixed inset-0 bg-[#111111] w-full h-screen transition-transform duration-500 ease-in-out overflow-hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        
+        {/* Panel 1: Main Menu */}
+        <div className={`absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out ${mobileServicesView ? '-translate-x-full' : 'translate-x-0'}`}>
+          <div className="flex flex-col items-center justify-center h-full text-center space-y-8 p-6">
+            
+            {/* Services Button to open Panel 2 */}
+            <button 
+              onClick={() => setMobileServicesView(true)} 
+              className="text-white text-3xl font-light hover:text-green-400 transition-colors w-full flex justify-center items-center"
+            >
+              Services
+              <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
             </button>
+            
+            {/* Other Main Links */}
+            {navLinks.map(link => (
+              <Link key={link.href} href={link.href} className="text-white text-3xl font-light hover:text-green-400 transition-colors" onClick={closeMobileMenu}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
+
+        {/* Panel 2: Services Details */}
+        <div className={`absolute inset-0 w-full h-full bg-[#111111] transition-transform duration-500 ease-in-out flex flex-col items-center p-6 ${mobileServicesView ? 'translate-x-0' : 'translate-x-full'}`}>
+          {/* Back Button */}
+          <div className="w-full flex justify-start pt-5">
+            <button onClick={() => setMobileServicesView(false)} className="flex items-center text-white hover:text-green-400 transition-colors">
+              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+              <span className="text-xl font-light">Back</span>
+            </button>
+          </div>
+          
+          {/* Services List */}
+          <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
+            <h3 className="text-green-400 text-lg font-semibold mb-4">OUR SERVICES</h3>
+            {services.map((service) => (
+              <Link key={service.path} href={service.path} onClick={closeMobileMenu} className="group text-center">
+                <h4 className="text-white font-semibold text-2xl mb-1 group-hover:text-green-400 transition-colors duration-200">
+                  {service.title}
+                </h4>
+                <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-200 max-w-xs mx-auto">
+                  {service.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+        
+        {/* "Start a project" button (common to both panels) */}
+        <div className="absolute bottom-24 left-1/2 -translate-x-1/2">
+            <button className="bg-green-400 text-black flex items-center space-x-2 hover:bg-green-500 transition-all duration-300 ease-out px-8 py-3 rounded-full text-base">
+                <span>Start a project</span>
+                <span>&rarr;</span>
+            </button>
+        </div>
+
       </div>
       
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Product+Sans&display=swap');
         
-        nav, span, button {
+        nav, span, button, h3, h4, p {
           font-family: 'Product Sans', sans-serif;
         }
       `}</style>
