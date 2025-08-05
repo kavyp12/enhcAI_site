@@ -4,24 +4,37 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": " next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@splinetool/react-spline": "^4.1.0",
+    "@types/three": "^0.179.0",
+    "autoprefixer": "^10.4.21",
+    "lucide-react": "^0.535.0",
+    "next": "15.4.5",
+    "postcss": "^8.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.5"
+    "react-icons": "^5.5.0",
+    "swiper": "^11.2.10",
+    "three": "^0.179.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.32.0",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
+    "eslint": "^9.32.0",
     "eslint-config-next": "15.4.5",
-    "@eslint/eslintrc": "^3"
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5",
+    "typescript-eslint": "^8.39.0"
   }
 }
