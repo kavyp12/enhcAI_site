@@ -261,47 +261,50 @@ const HelpWith = () => {
           </div>
 
           {/* Startup Section */}
-          <div className="w-full bg-black text-white px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-            <div className="flex w-full max-w-7xl mx-auto flex-col gap-10 lg:flex-row lg:gap-20 items-center">
-              <div className="flex-1 text-center lg:text-left">
+          {/* Startup Section */}
+              <div className="w-full bg-black text-white px-8 sm:px-16 lg:px-24 py-16">
+                  <div className="flex w-full max-w-7xl mx-auto flex-col gap-10 lg:flex-row lg:gap-20 items-center">
+                      {/* Left Column */}
+                      <div className="flex-1 text-center lg:text-left">
                 <p className="mb-6 text-base sm:text-lg">• AI Solutions</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight tracking-tight mb-8">
-                  Are you a startup, a well-established company, in the US or worldwide? It doesn't matter. We partner with a diverse range of clients.
-                </h2>
-                <div className="inline-flex justify-center lg:justify-start">
-                  <Link href="#" className="group bg-[#c6ff00] text-black font-medium text-sm py-2 px-4 rounded-full self-start flex items-center gap-2 transition-transform hover:scale-105 mt-4">
-                    About AIInnovate
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-              <div className="flex-1 w-full text-center lg:text-left lg:pt-16 lg:-translate-y-15 lg:translate-x-80">
-                <h3 className="text-gray-400 text-sm mb-4">Our AI Capabilities</h3>
-                <div className="space-y-2 text-sm inline-block text-left">
-                  {[
-                    'Custom AI Models',
+                          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight tracking-tight mb-8">
+                              Are you a startup, a well-established company, in the US or worldwide? It doesn't matter. We partner with a diverse range of clients.
+                          </h2>
+                          <div className="inline-flex justify-center lg:justify-start">
+                              <Link href="#" className="group bg-[#c6ff00] text-black font-medium text-sm py-2 px-4 rounded-full self-start flex items-center gap-2 transition-transform hover:scale-105 mt-4">
+                                  About AIInnovate
+                                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
+                                  </svg>
+                              </Link>
+                          </div>
+                      </div>
+
+                      {/* Right Column - Capabilities List */}
+                      <div className="flex-1 w-full text-center lg:text-left lg:pt-16 lg:-translate-y-15 lg:translate-x-80">
+                          <h3 className="text-gray-400 text-sm mb-4 ">Our AI Capabilities</h3>
+                          <div className="space-y-2 text-sm">
+                              {[
+                                  'Custom AI Models',
                     'Natural Language Processing',
                     'Computer Vision',
                     'Predictive Analytics',
                     'Data Strategy',
                     'AI Integration'
-                  ].map((capability, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <div className="w-4 h-4 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3 h-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
+                              ].map((capability, index) => (
+                                  <div key={index} className="flex items-center gap-2 justify-center lg:justify-start">
+                                      <div className="w-4 h-4 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                          <svg className="w-3 h-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                          </svg>
+                                      </div>
+                                      <span className="text-white text-sm">{capability}</span>
+                                  </div>
+                              ))}
+                          </div>
                       </div>
-                      <span className="text-white text-sm">{capability}</span>
-                    </div>
-                  ))}
-                </div>
+                  </div>
               </div>
-            </div>
-          </div>
-
           {/* Animated Text Section */}
           <div className="overflow-hidden bg-black py-8 text-center">
             <div className="left-text w-full text-white text-5xl sm:text-7xl lg:text-9xl font-bold whitespace-nowrap leading-none">
