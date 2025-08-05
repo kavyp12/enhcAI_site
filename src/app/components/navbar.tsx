@@ -2,43 +2,33 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-// Note: 'path' import is not used in React components and can be removed.
-// import path from 'path'; 
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  // --- NEW STATE for mobile services view ---
   const [mobileServicesView, setMobileServicesView] = useState(false); 
 
   const lastScrollY = useRef(0);
   const servicesRef = useRef(null);
 
-  // Effect to handle scroll-based UI changes
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const isScrollingDown = currentScrollY > lastScrollY.current;
-
       setIsScrolled(currentScrollY > 50);
-
       if (currentScrollY > 200 && isScrollingDown) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
-
       lastScrollY.current = currentScrollY;
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Effect to disable body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -50,13 +40,11 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
-  // --- HELPER FUNCTION to close the mobile menu completely ---
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
-    setMobileServicesView(false); // Also reset the services view
+    setMobileServicesView(false);
   };
 
-  // Services dropdown data
   const services = [
     {
       title: "Custom AI Solutions",
@@ -190,7 +178,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* --- MODIFIED Mobile Menu Button (Hamburger) --- */}
+        {/* Mobile Menu Button (Hamburger) */}
         <div className="md:hidden flex items-center">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="z-50" aria-label="Toggle Menu">
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,14 +188,13 @@ export default function Navbar() {
         </div>
       </nav>
       
-      {/* --- RESTRUCTURED Mobile Menu Overlay --- */}
+      {/* Mobile Menu Overlay */}
       <div className={`md:hidden fixed inset-0 bg-[#111111] w-full h-screen transition-transform duration-500 ease-in-out overflow-hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         
         {/* Panel 1: Main Menu */}
         <div className={`absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out ${mobileServicesView ? '-translate-x-full' : 'translate-x-0'}`}>
           <div className="flex flex-col items-center justify-center h-full text-center space-y-8 p-6">
             
-            {/* Services Button to open Panel 2 */}
             <button 
               onClick={() => setMobileServicesView(true)} 
               className="text-white text-3xl font-light hover:text-green-400 transition-colors w-full flex justify-center items-center"
@@ -216,12 +203,19 @@ export default function Navbar() {
               <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
             </button>
             
-            {/* Other Main Links */}
             {navLinks.map(link => (
               <Link key={link.href} href={link.href} className="text-white text-3xl font-light hover:text-green-400 transition-colors" onClick={closeMobileMenu}>
                 {link.label}
               </Link>
             ))}
+          </div>
+          
+          {/* "Start a project" button - only on main menu panel */}
+          <div className="absolute bottom-24 left-1/2 -translate-x-1/2">
+            <button className="bg-green-400 text-black flex items-center space-x-2 hover:bg-green-500 transition-all duration-300 ease-out px-8 py-3 rounded-full text-base">
+              <span>Start a project</span>
+              <span>&rarr;</span>
+            </button>
           </div>
         </div>
 
@@ -236,8 +230,18 @@ export default function Navbar() {
           </div>
           
           {/* Services List */}
-          <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
-            <h3 className="text-green-400 text-lg font-semibold mb-4">OUR SERVICES</h3>
+          <div className="flex flex-col items-center justify-center h-full text-center space-y-8">
+            
+            {/* View All Services Link */}
+            <Link key="/services" href="/services" onClick={closeMobileMenu} className="group text-center border-b border-gray-700 pb-8 mb-0">
+              <h4 className="text-white font-semibold text-2xl mb-1 group-hover:text-green-400 transition-colors duration-200">
+                View All Services
+              </h4>
+              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-200 max-w-xs mx-auto">
+                An overview of our cutting-edge AI solutions.
+              </p>
+            </Link>
+
             {services.map((service) => (
               <Link key={service.path} href={service.path} onClick={closeMobileMenu} className="group text-center">
                 <h4 className="text-white font-semibold text-2xl mb-1 group-hover:text-green-400 transition-colors duration-200">
@@ -249,14 +253,6 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-        </div>
-        
-        {/* "Start a project" button (common to both panels) */}
-        <div className="absolute bottom-24 left-1/2 -translate-x-1/2">
-            <button className="bg-green-400 text-black flex items-center space-x-2 hover:bg-green-500 transition-all duration-300 ease-out px-8 py-3 rounded-full text-base">
-                <span>Start a project</span>
-                <span>&rarr;</span>
-            </button>
         </div>
 
       </div>
