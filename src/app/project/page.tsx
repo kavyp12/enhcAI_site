@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Navbar from '@/app/components/navbar';
 import Footer from '@/app/components/footer';
+import Link from 'next/link'; // <-- ADDED IMPORT
 
 // Define the type for a single project
 interface Project {
@@ -55,45 +56,49 @@ function ProjectFilters({ categories, selectedCategory, onCategorySelect }: {
   );
 }
 
-// ProjectCard component
+// ProjectCard component - UPDATED
 function ProjectCard({ project }: { project: Project }) {
   const hasSpecialLogo = project.id === 'ai-core-platform';
 
   return (
-    <div>
-      <div className="group relative w-full min-h-[380px] sm:min-h-[480px] overflow-hidden rounded-2xl cursor-pointer">
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
-        <div className="absolute top-4 left-4 sm:top-8 sm:left-8 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-          {project.tags.map((tag: string) => (
-            <span key={tag} className="bg-white/10 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
-              {tag}
-            </span>
-          ))}
-        </div>
+    <Link href={`/project/${project.id}`} className="block">
+        <div>
+          <div className="group relative w-full min-h-[380px] sm:min-h-[480px] overflow-hidden rounded-2xl cursor-pointer">
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
+            <div className="absolute top-4 left-4 sm:top-8 sm:left-8 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+              {project.tags.map((tag: string) => (
+                <span key={tag} className="bg-white/10 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
 
-        {hasSpecialLogo && (
-          <div className="absolute inset-0 flex items-center justify-center text-white/80" aria-hidden="true">
-            <span className="text-7xl sm:text-8xl font-thin tracking-widest">A</span>
-            <span className="w-12 sm:w-16 h-px bg-white/80 mx-2 sm:mx-4"></span>
-            <span className="text-7xl sm:text-8xl font-thin tracking-widest">I</span>
+            {hasSpecialLogo && (
+              <div className="absolute inset-0 flex items-center justify-center text-white/80" aria-hidden="true">
+                <span className="text-7xl sm:text-8xl font-thin tracking-widest">A</span>
+                <span className="w-12 sm:w-16 h-px bg-white/80 mx-2 sm:mx-4"></span>
+                <span className="text-7xl sm:text-8xl font-thin tracking-widest">I</span>
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <div className="pt-6 text-white">
-        <p className="text-sm text-gray-400">{project.year} • {project.client}</p>
-        <h3 className="text-xl sm:text-2xl font-medium mt-2 leading-tight">
-          {project.title}
-        </h3>
-      </div>
-    </div>
+          <div className="pt-6 text-white">
+            <p className="text-sm text-gray-400">{project.year} • {project.client}</p>
+            <h3 className="text-xl sm:text-2xl font-medium mt-2 leading-tight">
+              {project.title}
+            </h3>
+          </div>
+        </div>
+      
+    </Link>
   );
 }
+
 
 // Function to get dynamic heading based on category
 function getDynamicHeading(category: string): string {
@@ -128,6 +133,7 @@ export default function App() {
       column: 'left',
       tags: ['AI', 'Healthcare', 'Predictive Analytics'],
       category: 'healthcare',
+      // The "link" property was removed to match the interface
     },
     {
       id: 'edu-ai-system',
@@ -275,15 +281,13 @@ export default function App() {
     <>
       <Navbar />
       <section className="bg-black text-white pt-24 sm:pt-32 pb-16 px-4 sm:px-8 lg:px-16">
-<div className="max-w-screen-2xl mx-auto mb-24">
-            <ProjectFilters 
+        <div className="max-w-screen-2xl mx-auto mb-24">
+          <ProjectFilters 
             categories={categoryData} 
             selectedCategory={selectedCategory}
             onCategorySelect={setSelectedCategory}
           />
 
-          {/* START: CHANGE 1 - Add a mobile-only heading */}
-          {/* This heading block is only visible on screens smaller than the 'lg' breakpoint */}
           <div className="lg:hidden mb-12">
             <p className="text-sm text-gray-400">• Our Work</p>
             <h2 
@@ -291,7 +295,6 @@ export default function App() {
               dangerouslySetInnerHTML={{ __html: dynamicHeading }}
             />
           </div>
-          {/* END: CHANGE 1 */}
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 items-start">
             <div className="flex flex-col gap-16">
@@ -300,9 +303,6 @@ export default function App() {
               ))}
             </div>
             <div className="flex flex-col gap-16">
-
-              {/* START: CHANGE 2 - Modify the original heading to be desktop-only */}
-              {/* This heading block is now hidden on mobile and only appears on 'lg' screens and larger */}
               <div className="hidden lg:block lg:pt-8 mb-12 lg:mb-0">
                 <p className="text-sm text-gray-400">• Our Work</p>
                 <h2 
@@ -310,7 +310,6 @@ export default function App() {
                   dangerouslySetInnerHTML={{ __html: dynamicHeading }}
                 />
               </div>
-              {/* END: CHANGE 2 */}
 
               {arrangedProjects.right.map(project => (
                 <ProjectCard key={project.id} project={project} />
