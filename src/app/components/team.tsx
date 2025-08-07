@@ -59,7 +59,7 @@ const Team: React.FC = () => {
                 return (
                   <div key={index} className={`relative bg-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg aspect-[3/4] flex-shrink-0 w-[180px] sm:w-[200px] md:w-[300px] mx-1.5 sm:mx-2 md:mx-3 ${isEven ? 'transform md:translate-y-[-1.5rem]' : 'transform md:translate-y-[2rem]'}`}>
                     <img src={member.avatar} alt={member.name} className={`w-full h-full object-cover rounded-2xl sm:rounded-3xl ${member.blurred ? "blur-md scale-105" : ""}`}/>
-                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-lime-400 text-black rounded-full p-1 sm:p-1.5 w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm font-bold">+</div>
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-[#102d4d] text-white rounded-full p-1 sm:p-1.5 w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm font-bold">+</div>
                     <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/90 to-transparent rounded-2xl sm:rounded-3xl">
                       <h3 className="text-sm sm:text-lg font-semibold">{member.name}</h3>
                       <p className="text-gray-300 text-xs sm:text-sm">{member.role}</p>
@@ -72,7 +72,7 @@ const Team: React.FC = () => {
 
           <div className="mt-12 sm:mt-16 md:mt-24">
             <div className="flex justify-center mb-12 sm:mb-16">
-              <button className="flex items-center space-x-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-lime-400 text-black rounded-full font-bold text-xs sm:text-sm transition-transform duration-300 hover:scale-105">
+              <button className="flex items-center space-x-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#102d4d] text-white rounded-full font-bold text-xs sm:text-sm transition-transform duration-300 hover:scale-105">
                 <span>Meet the whole Team</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

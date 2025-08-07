@@ -32,7 +32,7 @@ const ArrowIcon = () => (
   >
     <path
       d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3"
-      stroke="black"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -105,7 +105,7 @@ export default function Award() {
             </h2>
             <a
               href="#" // Replace with your link
-              className="mt-12 bg-[#C5F277] text-black font-bold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-white transition-colors duration-300"
+              className="mt-12 bg-[#102d4d] text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-white hover:text-black transition-colors duration-300"
             >
               You could be next
               <ArrowIcon />

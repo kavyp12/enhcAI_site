@@ -10,7 +10,7 @@ const fontStyles = `
   }
 `;
 
-const ArrowIcon = () => (<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>);
+const ArrowIcon = () => (<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>);
 
 const services = [
     { title: "ML Models", description: "Custom machine learning models to uncover insights and automate complex processes.", image: "https://images.unsplash.com/photo-1599441215132-1cf6d12a6d44?w=400&h=250&fit=crop&crop=center" },
@@ -81,7 +81,7 @@ export default function Business() {
             <p className="max-w-xs mb-6 text-gray-400 product-sans">
               We are an AI solutions provider with deep expertise, on a mission to help you take the next giant leap in your business's evolution.
             </p>
-            <button className="bg-[#C4F063] text-black font-bold py-3 px-6 rounded-full flex items-center gap-3 hover:opacity-90 transition-opacity product-sans">
+            <button className="bg-[#102d4d] text-white font-bold py-3 px-6 rounded-full flex items-center gap-3 hover:bg-[#0d2640] transition-colors product-sans">
               See all services <ArrowIcon />
             </button>
           </div>

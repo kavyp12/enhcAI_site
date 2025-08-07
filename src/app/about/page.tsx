@@ -85,9 +85,9 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <button className="bg-lime-300 text-black border-none rounded-full px-5 py-2 text-sm font-bold cursor-pointer inline-flex items-center gap-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-lime-300/30 mt-4 mb-8">
+        <button className="group bg-[#102d4d] text-white border-none rounded-full px-5 py-2 text-sm font-bold cursor-pointer inline-flex items-center gap-4 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-[#102d4d]/30 mt-4 mb-8">
           <span>Explore our work</span>
-          <span className="bg-black rounded-full w-7 h-7 flex justify-center items-center text-lime-300 transition-transform duration-300 group-hover:translate-x-1">
+          <span className="bg-white rounded-full w-7 h-7 flex justify-center items-center text-[#102d4d] transition-transform duration-300 group-hover:translate-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -110,7 +110,7 @@ export default function AboutPage() {
             {/* Left Column */}
             <div className="flex-1 space-y-4 text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm">
-                <div className="w-2 h-2 bg-green-400 rounded-full" />
+                <div className="w-2 h-2 bg-[#102d4d] rounded-full" />
                 <span className="text-gray-300">Pioneering Intelligence</span>
               </div>
               <h1 className="text-3xl lg:text-4xl font-normal leading-tight tracking-tight">

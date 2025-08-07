@@ -35,13 +35,13 @@ export default function Footer() {
             <div className="col-span-1 sm:col-span-2 lg:col-span-1">
               <div className="flex justify-center sm:justify-start space-x-2 lg:flex-col lg:space-x-0 lg:space-y-2">
                 {socialLinks.map((social, index) => (
-                  <a key={index} href={social.href} aria-label={social["aria-label"]} className="w-10 h-10 bg-[#2d2d2d] hover:bg-[#c5ff49] text-[#c5ff49] hover:text-black rounded-full flex items-center justify-center transition-colors"><social.icon className="w-5 h-5" /></a>
+                  <a key={index} href={social.href} aria-label={social["aria-label"]} className="w-10 h-10 bg-[#2d2d2d] hover:bg-[#102d4d] text-white rounded-full flex items-center justify-center transition-colors"><social.icon className="w-5 h-5" /></a>
                 ))}
               </div>
             </div>
             <div className="col-span-1 sm:col-span-2 lg:col-span-4 text-center sm:text-left">
               <h2 className="text-4xl md:text-5xl font-semi tracking-tighter leading-tight product-sans">Do you like<br />what you see?</h2>
-              <a href="#" className="inline-flex items-center gap-2 bg-[#c5ff49] text-black font-bold py-3 px-6 rounded-full mt-6 hover:bg-white transition-colors product-sans">Start a project<span className="text-lg">↗</span></a>
+              <a href="#" className="inline-flex items-center gap-2 bg-[#102d4d] text-white font-bold py-3 px-6 rounded-full mt-6 hover:bg-white hover:text-black transition-colors product-sans">Start a project<span className="text-lg">↗</span></a>
               <div className="mt-6 flex items-center justify-center sm:justify-start gap-2 text-sm text-gray-400">
                 <span className="text-white product-sans">5.0 from 69 reviews</span>
                 <svg className="w-4 h-4" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.6 32 29.3 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.8 0 5.4 1.1 7.4 2.9l6.4-6.4C34.4 5.1 29.5 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 19.4-7.6 20.8-17.5.1-.9.2-1.8.2-2.7 0-1.2-.1-2.3-.4-3.3z" /></svg>
@@ -55,7 +55,7 @@ export default function Footer() {
             </div>
             <div className="col-span-1 sm:col-span-1 lg:col-span-2 text-center sm:text-left">
               <h3 className="font-bold mb-4 product-sans">Explore</h3>
-              <ul className="space-y-2 text-gray-400">{exploreLinks.map((link, index) => (<li key={index}><a href="#" className="hover:text-white transition-colors flex items-center justify-center sm:justify-start product-sans">{link.text}{link.isNew && (<span className="ml-2 text-xs font-bold bg-[#c5ff49] text-black px-2 py-0.5 rounded-full product-sans">NEW</span>)}</a></li>))}</ul>
+              <ul className="space-y-2 text-gray-400">{exploreLinks.map((link, index) => (<li key={index}><a href="#" className="hover:text-white transition-colors flex items-center justify-center sm:justify-start product-sans">{link.text}{link.isNew && (<span className="ml-2 text-xs font-bold bg-[#102d4d] text-white px-2 py-0.5 rounded-full product-sans">NEW</span>)}</a></li>))}</ul>
             </div>
             <div className="col-span-1 sm:col-span-2 lg:col-span-2 text-center sm:text-left">
               <h3 className="font-bold mb-4 product-sans">Get in touch</h3>

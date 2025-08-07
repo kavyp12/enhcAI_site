@@ -82,7 +82,7 @@ const GithubIcon = ({ className = "w-5 h-5" }) => (
 );
 
 const SocialLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#2a2a2a] rounded-full flex items-center justify-center text-white hover:bg-[#c6ff00] hover:text-black transition-all duration-300">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#2a2a2a] rounded-full flex items-center justify-center text-white hover:bg-[#102d4d] transition-all duration-300">
         {children}
     </a>
 );
@@ -176,10 +176,10 @@ const FaqSection = () => {
                     </h2>
                      <a
                          href="#"
-                         className="group bg-[#c6ff00] text-black font-medium text-sm py-2 px-4 rounded-full self-center lg:self-start inline-flex items-center gap-1 transition-transform hover:scale-105"
+                         className="group bg-[#102d4d] text-white font-medium text-sm py-2 px-4 rounded-full self-center lg:self-start inline-flex items-center gap-1 transition-transform hover:scale-105"
                      >
                          View all FAQS
-                         <div className="bg-black/15 rounded-full p-0.5 transition-transform group-hover:rotate-45">
+                         <div className="bg-white/20 rounded-full p-0.5 transition-transform group-hover:rotate-45">
                              <ArrowUpRightIcon className="w-4 h-4" />
                          </div>
                      </a>
@@ -208,7 +208,7 @@ const ContactPage = () => {
 
     
   // Common classes for form inputs with rounded borders
-  const inputStyles = "w-full bg-[#1c1c1c] text-white p-4 rounded-2xl border border-transparent focus:outline-none focus:ring-2 focus:ring-[#c6ff00] font-google-sans";
+  const inputStyles = "w-full bg-[#1c1c1c] text-white p-4 rounded-2xl border border-transparent focus:outline-none focus:ring-2 focus:ring-[#102d4d] font-google-sans";
 
   return (
     <main className="bg-black text-white min-h-screen font-google-sans p-4 sm:p-8 overflow-x-hidden">
@@ -225,7 +225,7 @@ const ContactPage = () => {
             <div className="flex items-center justify-center lg:justify-start mt-2 lg:mt-0">
               <span className="block lg:inline-block lg:transform lg:translate-x-40 lg:-translate-y-28 lg:text-8xl xl:text-9xl">meet ya</span>
               <button
-                className="bg-[#a3ff00] text-black rounded-full w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center ml-4 sm:ml-6 shrink-0 transition-transform lg:transform lg:-translate-y-26 lg:translate-x-40 hover:scale-110"
+                className="bg-[#102d4d] text-white rounded-full w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center ml-4 sm:ml-6 shrink-0 transition-transform lg:transform lg:-translate-y-26 lg:translate-x-40 hover:scale-110"
                 aria-label="Meet us"
               >
                 <ArrowIcon />
@@ -252,16 +252,16 @@ const ContactPage = () => {
           </p>
           <a
             href="#"
-              className="group bg-[#c6ff00] text-black font-medium text-sm py-2 px-4 rounded-full self-center lg:self-start flex items-center gap-2 transition-transform hover:scale-105 mt-4"
+              className="group bg-[#102d4d] text-white font-medium text-sm py-2 px-4 rounded-full self-center lg:self-start flex items-center gap-2 transition-transform hover:scale-105 mt-4"
           >
             Go to Project Planner
-            <div className="bg-black/15 rounded-full p-1 transition-transform group-hover:rotate-45">
+            <div className="bg-white/20 rounded-full p-1 transition-transform group-hover:rotate-45">
               <ArrowUpRightIcon className="w-5 h-5" />
             </div>
           </a>
           <p className="text-sm">
             Hate contact forms?{' '}
-            <a href="mailto:hello@madebyenhc.co.uk" className="text-white font-semibold hover:text-[#c6ff00] transition-colors">
+            <a href="mailto:hello@madebyenhc.co.uk" className="text-white font-semibold hover:text-blue-400 transition-colors">
               hello@madebyenhc.co.uk
             </a>
           </p>
@@ -301,7 +301,7 @@ const ContactPage = () => {
               <input
                 type="checkbox"
                 id="newsletter"
-                className="h-4 w-4 bg-[#1c1c1c] border-gray-600 rounded text-[#c6ff00] focus:ring-[#c6ff00] focus:ring-offset-0 focus:ring-1 cursor-pointer"
+                className="h-4 w-4 bg-[#1c1c1c] border-gray-600 rounded text-[#102d4d] focus:ring-[#102d4d] focus:ring-offset-0 focus:ring-1 cursor-pointer"
               />
               <label htmlFor="newsletter" className="text-sm text-gray-400 cursor-pointer">
                 Subscribe to our newsletter for all the latest enhc goss!
@@ -366,10 +366,10 @@ const ContactPage = () => {
             <div className="flex justify-center lg:justify-start">
                 <a
                   href="#"
-                  className="group bg-[#c6ff00] text-black font-medium text-sm py-2 px-4 rounded-full self-start flex items-center gap-2 transition-transform hover:scale-105 mt-4"
+                  className="group bg-[#102d4d] text-white font-medium text-sm py-2 px-4 rounded-full self-start flex items-center gap-2 transition-transform hover:scale-105 mt-4"
                 >
                   Get directions
-                  <div className="bg-black/15 rounded-full p-0.5 transition-transform group-hover:rotate-45">
+                  <div className="bg-white/20 rounded-full p-0.5 transition-transform group-hover:rotate-45">
                     <ArrowUpRightIcon className="w-4 h-4" />
                   </div>
                 </a>

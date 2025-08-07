@@ -38,7 +38,7 @@ const Testimonial: React.FC = () => {
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mt-4 leading-tight text-left product-sans">
                 Trusted by leading innovators
               </h2>
-              <button className="mt-8 sm:mt-12 bg-[#C5F277] text-black font-bold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-white transition-colors duration-300 product-sans">
+              <button className="mt-8 sm:mt-12 bg-[#102d4d] text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-[#0d2640] transition-colors duration-300 product-sans">
                 View all stories
                 <ArrowUpRight size={20} />
               </button>
@@ -54,8 +54,8 @@ const Testimonial: React.FC = () => {
                 <SwiperSlide key={testimonial.id} className="h-auto">
                   <div className="bg-[#1C1C1C] p-8 rounded-2xl h-full flex flex-col justify-between min-h-[380px] sm:min-h-[400px]">
                     <div>
-                      <div className="flex justify-center text-[#C5F277]">
-                        {[...Array(testimonial.rating)].map((_, i) => (<Star key={i} fill="#C5F277" strokeWidth={0} size={20} />))}
+                      <div className="flex justify-center text-blue-400">
+                        {[...Array(testimonial.rating)].map((_, i) => (<Star key={i} fill="currentColor" strokeWidth={0} size={20} />))}
                       </div>
                       <p className="text-gray-300 mt-6 text-base sm:text-lg leading-relaxed text-center product-sans">"{testimonial.text}"</p>
                     </div>

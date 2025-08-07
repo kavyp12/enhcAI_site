@@ -141,13 +141,13 @@ const BlogsPage: React.FC = () => {
                 <div className="flex justify-between items-start gap-4">
                     <div>
                         <span className="text-gray-400 text-sm">• {post.readTime}</span>
-                        <h3 className="text-white text-lg font-medium leading-snug mt-1 transition-colors duration-300 group-hover:text-lime-400">
+                        <h3 className="text-white text-lg font-medium leading-snug mt-1 transition-colors duration-300 group-hover:text-blue-400">
                             {post.title}
                         </h3>
                     </div>
                     {/* Arrow Icon */}
                     <div className="flex-shrink-0 mt-2">
-                        <ArrowIcon className="stroke-gray-600 transition-all duration-300 group-hover:stroke-lime-400 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        <ArrowIcon className="stroke-gray-600 transition-all duration-300 group-hover:stroke-blue-400 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </div>
                 </div>
               </article>

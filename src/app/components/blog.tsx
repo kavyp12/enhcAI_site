@@ -34,7 +34,7 @@ export default function Blog() {
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semi mt-4 leading-tight product-sans">
                 The latest from our AI lab
               </h2>
-              <button className="mt-8 bg-[#C5F277] text-black font-bold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-white transition-colors duration-300 product-sans">
+              <button className="mt-8 bg-[#102d4d] text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-[#0d2640] transition-colors duration-300 product-sans">
                 View the blog <ArrowUpRight size={20} />
               </button>
             </div>
@@ -62,7 +62,7 @@ export default function Blog() {
                     <img src={post.image} alt={post.title} className="w-full h-72 object-cover rounded-2xl" />
                     <div className="mt-4">
                       <p className="text-sm text-gray-400 product-sans">• {post.readTime}</p>
-                      <h3 className="text-xl font-bold mt-2 hover:text-[#C5F277] transition-colors cursor-pointer product-sans">{post.title}</h3>
+                      <h3 className="text-xl font-bold mt-2 hover:text-blue-400 transition-colors cursor-pointer product-sans">{post.title}</h3>
                       <p className="text-gray-400 mt-2 text-sm leading-relaxed product-sans">{post.description}</p>
                     </div>
                   </div>

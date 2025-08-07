@@ -122,7 +122,7 @@ export default function Navbar() {
               }`}
             >
               <span>Services</span>
-              <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-0 h-0.5 bg-green-400 transition-all duration-300 ease-out group-hover:w-full"></span>
+              <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-0 h-0.5 bg-[#102d4d] transition-all duration-300 ease-out group-hover:w-full"></span>
             </Link>
             
             {/* Dropdown Menu */}
@@ -140,7 +140,7 @@ export default function Navbar() {
                     <div className="space-y-3">
                       {services.map((service, index) => (
                         <Link key={index} href={service.path || "/services"} className="group cursor-pointer block">
-                          <h4 className="text-white font-semibold text-base mb-1 group-hover:text-green-400 transition-colors duration-200">
+                          <h4 className="text-white font-semibold text-base mb-1 group-hover:text-blue-400 transition-colors duration-200">
                             {service.title}
                           </h4>
                           <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-200">
@@ -165,14 +165,14 @@ export default function Navbar() {
           {navLinks.map(link => (
             <Link key={link.href} href={link.href} className={`relative group transition-all duration-500 ease-out origin-center ${isScrolled ? 'text-sm' : 'text-base'}`}>
               <span>{link.label}</span>
-              <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-0 h-0.5 bg-green-400 transition-all duration-300 ease-out group-hover:w-full"></span>
+              <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-0 h-0.5 bg-[#102d4d] transition-all duration-300 ease-out group-hover:w-full"></span>
             </Link>
           ))}
         </div>
         
         {/* Desktop "Start a project" Button */}
         <div className={`hidden md:flex items-center transition-all duration-500 ease-out origin-center ${isScrolled ? 'space-x-2' : 'space-x-6'}`}>
-          <button className={`bg-green-400 text-black flex items-center space-x-2 hover:bg-green-500 transition-all duration-300 ease-out origin-center ${isScrolled ? 'px-4 py-2 rounded-full text-sm' : 'px-8 py-3 rounded-full text-base'}`}>
+          <button className={`bg-[#102d4d] text-white flex items-center space-x-2 hover:bg-[#0d2640] transition-all duration-300 ease-out origin-center ${isScrolled ? 'px-4 py-2 rounded-full text-sm' : 'px-8 py-3 rounded-full text-base'}`}>
             <span>Start a project</span>
             <span>&rarr;</span>
           </button>
@@ -197,14 +197,14 @@ export default function Navbar() {
             
             <button 
               onClick={() => setMobileServicesView(true)} 
-              className="text-white text-3xl font-light hover:text-green-400 transition-colors w-full flex justify-center items-center"
+              className="text-white text-3xl font-light hover:text-blue-400 transition-colors w-full flex justify-center items-center"
             >
               Services
               <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
             </button>
             
             {navLinks.map(link => (
-              <Link key={link.href} href={link.href} className="text-white text-3xl font-light hover:text-green-400 transition-colors" onClick={closeMobileMenu}>
+              <Link key={link.href} href={link.href} className="text-white text-3xl font-light hover:text-blue-400 transition-colors" onClick={closeMobileMenu}>
                 {link.label}
               </Link>
             ))}
@@ -212,7 +212,7 @@ export default function Navbar() {
           
           {/* "Start a project" button - only on main menu panel */}
           <div className="absolute bottom-24 left-1/2 -translate-x-1/2">
-            <button className="bg-green-400 text-black flex items-center space-x-2 hover:bg-green-500 transition-all duration-300 ease-out px-8 py-3 rounded-full text-base">
+            <button className="bg-[#102d4d] text-white flex items-center space-x-2 hover:bg-[#0d2640] transition-all duration-300 ease-out px-8 py-3 rounded-full text-base">
               <span>Start a project</span>
               <span>&rarr;</span>
             </button>
@@ -223,7 +223,7 @@ export default function Navbar() {
         <div className={`absolute inset-0 w-full h-full bg-[#111111] transition-transform duration-500 ease-in-out flex flex-col items-center p-6 ${mobileServicesView ? 'translate-x-0' : 'translate-x-full'}`}>
           {/* Back Button */}
           <div className="w-full flex justify-start pt-5">
-            <button onClick={() => setMobileServicesView(false)} className="flex items-center text-white hover:text-green-400 transition-colors">
+            <button onClick={() => setMobileServicesView(false)} className="flex items-center text-white hover:text-blue-400 transition-colors">
               <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
               <span className="text-xl font-light">Back</span>
             </button>
@@ -234,7 +234,7 @@ export default function Navbar() {
             
             {/* View All Services Link */}
             <Link key="/services" href="/services" onClick={closeMobileMenu} className="group text-center border-b border-gray-700 pb-8 mb-0">
-              <h4 className="text-white font-semibold text-2xl mb-1 group-hover:text-green-400 transition-colors duration-200">
+              <h4 className="text-white font-semibold text-2xl mb-1 group-hover:text-blue-400 transition-colors duration-200">
                 View All Services
               </h4>
               <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-200 max-w-xs mx-auto">
@@ -244,7 +244,7 @@ export default function Navbar() {
 
             {services.map((service) => (
               <Link key={service.path} href={service.path} onClick={closeMobileMenu} className="group text-center">
-                <h4 className="text-white font-semibold text-2xl mb-1 group-hover:text-green-400 transition-colors duration-200">
+                <h4 className="text-white font-semibold text-2xl mb-1 group-hover:text-blue-400 transition-colors duration-200">
                   {service.title}
                 </h4>
                 <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-200 max-w-xs mx-auto">
