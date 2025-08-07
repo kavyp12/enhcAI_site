@@ -356,7 +356,7 @@ const NeuralNetworksBlogPage: React.FC = () => {
                             </ul>
                             <p>When a neuron receives multiple inputs, it multiplies each input by its corresponding weight, adds them all up, and then applies the activation function to determine the output. It's like having a bouncer at a club who considers multiple factors (dress code, age, behavior) with different importance levels before deciding whether to let someone in 🚪</p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                 <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&q=80" alt="Neuron connections visualization" className="rounded-lg object-cover w-full h-[500px]"/>
+                                 <img src="/neural_network.jpg" alt="Neuron connections visualization" className="rounded-lg object-cover w-full h-[500px]"/>
                                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data processing concept" className="rounded-lg object-cover w-full h-[500px]"/>
                              </div>
                         </div>
@@ -468,7 +468,7 @@ const NeuralNetworksBlogPage: React.FC = () => {
                         >
                             {[
                                 { id: 1, image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=2070&q=80', readTime: '6 min read', title: 'Understanding Deep Learning Fundamentals', description: 'Dive deeper into the mathematical foundations and advanced concepts behind deep neural networks...' },
-                                { id: 2, image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=2070&q=80', readTime: '10 min read', title: 'Computer Vision: How Machines See the World', description: 'Explore how convolutional neural networks revolutionized image recognition and computer vision applications...' },
+                                { id: 2, image: '/computer_vision.jpg', readTime: '10 min read', title: 'Computer Vision: How Machines See the World', description: 'Explore how convolutional neural networks revolutionized image recognition and computer vision applications...' },
                                 { id: 3, image: 'https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=2070&q=80', readTime: '4 min read', title: 'Natural Language Processing Explained', description: 'From chatbots to language translation, discover how neural networks understand and generate human language...' },
                                 { id: 4, image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=2070&q=80', readTime: '8 min read', title: 'The Ethics of Artificial Intelligence', description: 'Examining the moral implications and responsible development of AI systems in our modern society...' },
                             ].map((post) => (
