@@ -385,7 +385,7 @@ export default function App() {
 
             <section className="mt-10">
               <div className="relative rounded-2xl overflow-hidden h-[400px] md:h-[600px]">
-                <img src="/Logo_design.jpg" alt="Logo design process" className="absolute inset-0 w-full h-full object-cover"/>
+                <img src="/neural_network.jpg" alt="Logo design process" className="absolute inset-0 w-full h-full object-cover"/>
                 <div className="absolute inset-0 bg-black/50"></div>
               </div>
             </section>
