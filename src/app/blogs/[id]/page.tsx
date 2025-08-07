@@ -106,34 +106,34 @@ const NeuralNetworksBlogPage: React.FC = () => {
 
         // Function to snap to main content section
         const snapToMainContent = () => {
-    const mainContainer = mainContainerRef.current;
-    
-    if (mainContainer) {
-        const mainRect = mainContainer.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const scrollY = window.pageYOffset;
-        
-        // Calculate the ideal position (middle of viewport minus some offset)
-        const idealTop = 100; // Offset from top of viewport
-        const targetScrollY = scrollY + mainRect.top - idealTop;
-        
-        // Define snap zones
-        const snapZoneTop = windowHeight * 0.7; // When coming from above
-        const snapZoneBottom = -windowHeight * 0.3; // When coming from below
-        
-        // Check if we should snap
-        const shouldSnapFromAbove = mainRect.top < snapZoneTop && mainRect.top > 0;
-        const shouldSnapFromBelow = mainRect.top < 0 && mainRect.top > snapZoneBottom;
-        
-        // Snap if in either zone
-        if (shouldSnapFromAbove || shouldSnapFromBelow) {
-            window.scrollTo({
-                top: targetScrollY,
-                behavior: 'smooth'
-            });
-        }
-    }
-};
+            const mainContainer = mainContainerRef.current;
+            
+            if (mainContainer) {
+                const mainRect = mainContainer.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                const scrollY = window.pageYOffset;
+                
+                // Calculate the ideal position (middle of viewport minus some offset)
+                const idealTop = 100; // Offset from top of viewport
+                const targetScrollY = scrollY + mainRect.top - idealTop;
+                
+                // Define snap zones
+                const snapZoneTop = windowHeight * 0.7; // When coming from above
+                const snapZoneBottom = -windowHeight * 0.3; // When coming from below
+                
+                // Check if we should snap
+                const shouldSnapFromAbove = mainRect.top < snapZoneTop && mainRect.top > 0;
+                const shouldSnapFromBelow = mainRect.top < 0 && mainRect.top > snapZoneBottom;
+                
+                // Snap if in either zone
+                if (shouldSnapFromAbove || shouldSnapFromBelow) {
+                    window.scrollTo({
+                        top: targetScrollY,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        };
 
         // Handle wheel events anywhere on the page
         const handleWheelScroll = (e: WheelEvent) => {
@@ -236,22 +236,22 @@ const NeuralNetworksBlogPage: React.FC = () => {
                 }
                     
                 body {
-    background-color: #000000 !important;
-}
+                    background-color: #000000 !important;
+                }
             `}</style>
 
             <Navbar />
             
             {/* Hero Section */}
-<header className="bg-black flex flex-col md:flex-row h-screen max-h-[900px] pt-22">
-                        <div className="bg-black text-white w-full md:w-2/5 lg:w-1/3 flex flex-col justify-between p-8 md:p-12 lg:p-16">
+            <header className="bg-black flex flex-col md:flex-row md:h-screen md:max-h-[900px] pt-20 md:pt-22">
+                <div className="bg-black text-white w-full md:w-2/5 lg:w-1/3 flex flex-col justify-center p-6 sm:p-8 md:p-12 lg:p-16 order-2 md:order-1">
                     <div>
                         <p className="text-sm text-gray-300 tracking-wider">
                             <span className="text-lg leading-none mr-1">•</span> 8 min read
                         </p>
                     </div>
-                    <div className="my-16 md:my-0 -translate-x-3">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
+                    <div className="my-10 md:my-0 -translate-x-1 sm:-translate-x-3">
+                        <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
                             Demystifying <br />
                             <span className="whitespace-nowrap">Neural Networks:</span> <br />
                             A Beginner's Guide
@@ -270,8 +270,9 @@ const NeuralNetworksBlogPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="hidden md:block w-full md:w-3/5 lg:w-2/3 bg-custom-image bg-cover bg-center"></div>
+                <div className="w-full h-64 sm:h-80 md:h-full md:w-3/5 lg:w-2/3 bg-custom-image bg-cover bg-center order-1 md:order-2"></div>
             </header>
+
 
             {/* Main Content Layout (Sidebar + Article) */}
             <main ref={mainContainerRef} className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-12 px-4 sm:px-8 lg:px-16">
@@ -431,7 +432,6 @@ const NeuralNetworksBlogPage: React.FC = () => {
             </main>
 
             {/* Blog Section */}
-              {/* Blog Section */}
             <section className="bg-black text-white w-full py-20 lg:py-28 product-sans">
                 <div className="max-w-[90rem] mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
                     <div className="lg:col-span-4 flex flex-col justify-between h-full text-left">
@@ -455,9 +455,9 @@ const NeuralNetworksBlogPage: React.FC = () => {
                     </div>
                     <div className="lg:col-span-8 overflow-hidden">
                         <Swiper
-                            modules={[Navigation]} // <<< FIX IS HERE
-                            spaceBetween={30}
-                            slidesPerView={1.2}
+                            modules={[Navigation]}
+                            spaceBetween={20}
+                            slidesPerView={1.1}
                             navigation={{ prevEl: '.blog-swiper-prev', nextEl: '.blog-swiper-next' }}
                             breakpoints={{
                                 640: { slidesPerView: 1.5, spaceBetween: 20 },
