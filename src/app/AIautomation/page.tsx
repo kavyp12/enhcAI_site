@@ -750,14 +750,14 @@ const HelpWith = () => {
                     </Swiper>
 
                     {/* Navigation Arrows */}
-                    <div className="flex gap-4 mt-12 justify-center">
-                        <button className="work-swiper-prev p-3 rounded-full bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary-hover)] transition-colors text-white disabled:opacity-50">
-                            <ArrowLeft size={24} />
-                        </button>
-                        <button className="work-swiper-next p-3 rounded-full bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary-hover)] transition-colors text-white disabled:opacity-50">
-                            <ArrowRight size={24} />
-                        </button>
-                    </div>
+                   <div className="flex gap-4 mt-12 justify-center">
+                                   <button className="work-swiper-prev p-3 rounded-full bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary-hover)] transition-colors text-[var(--text-main)] disabled:opacity-50">
+                                     <ArrowLeft size={24} />
+                                   </button>
+                                   <button className="work-swiper-next p-3 rounded-full bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary-hover)] transition-colors text-[var(--text-main)] disabled:opacity-50">
+                                     <ArrowRight size={24} />
+                                   </button>
+                                 </div>
                 </div>
             </div>
         </section>
