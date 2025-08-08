@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import Navbar from '@/app/components/navbar';
 import Footer from '@/app/components/footer';
-import Link from 'next/link'; // <-- ADDED IMPORT
+import Link from 'next/link';
 
-// Define the type for a single project
 interface Project {
   id: string;
   year: number;
@@ -17,13 +16,11 @@ interface Project {
   category: string;
 }
 
-// Define the type for a single category filter
 interface Category {
   name: string;
   count: number;
 }
 
-// ProjectFilters component for the top section
 function ProjectFilters({ categories, selectedCategory, onCategorySelect }: { 
   categories: Category[]; 
   selectedCategory: string; 
@@ -31,7 +28,7 @@ function ProjectFilters({ categories, selectedCategory, onCategorySelect }: {
 }) {
   return (
     <div className="mb-12 sm:mb-20">
-      <p className="text-sm text-gray-400 mb-6">• Our Work</p>
+      <p className="text-sm text-[var(--text-muted)] mb-6">• Our Work</p>
       <div className="flex flex-wrap gap-x-4 sm:gap-x-8 gap-y-4 items-center">
         {categories.map((category) => (
           <button
@@ -40,8 +37,8 @@ function ProjectFilters({ categories, selectedCategory, onCategorySelect }: {
             className={`
               font-medium transition-colors duration-300 capitalize cursor-pointer
               ${selectedCategory.toLowerCase() === category.name.toLowerCase()
-                ? 'text-white text-3xl sm:text-5xl font-bold'
-                : 'text-gray-600 hover:text-white text-2xl sm:text-4xl'
+                ? 'text-[var(--text-main)] text-3xl sm:text-5xl font-bold'
+                : 'text-[var(--text-muted)] hover:text-[var(--text-main)] text-2xl sm:text-4xl'
               }
             `}
           >
@@ -56,7 +53,6 @@ function ProjectFilters({ categories, selectedCategory, onCategorySelect }: {
   );
 }
 
-// ProjectCard component - UPDATED
 function ProjectCard({ project }: { project: Project }) {
   const hasSpecialLogo = project.id === 'ai-core-platform';
 
@@ -69,7 +65,7 @@ function ProjectCard({ project }: { project: Project }) {
               alt={project.title}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
+            <div className="absolute inset-0 bg-[var(--bg-overlay)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
             <div className="absolute top-4 left-4 sm:top-8 sm:left-8 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               {project.tags.map((tag: string) => (
                 <span key={tag} className="bg-white/10 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -87,20 +83,17 @@ function ProjectCard({ project }: { project: Project }) {
             )}
           </div>
 
-          <div className="pt-6 text-white">
-            <p className="text-sm text-gray-400">{project.year} • {project.client}</p>
+          <div className="pt-6 text-[var(--text-main)]">
+            <p className="text-sm text-[var(--text-muted)]">{project.year} • {project.client}</p>
             <h3 className="text-xl sm:text-2xl font-medium mt-2 leading-tight">
               {project.title}
             </h3>
           </div>
         </div>
-      
     </Link>
   );
 }
 
-
-// Function to get dynamic heading based on category
 function getDynamicHeading(category: string): string {
   const headings: { [key: string]: string } = {
     'explore all': 'Discover our<br />AI innovations',
@@ -115,136 +108,25 @@ function getDynamicHeading(category: string): string {
     'research': 'Accelerating research<br />with AI insights',
     'marketing': 'Boosting marketing<br />with AI strategies',
   };
-  
   return headings[category.toLowerCase()] || 'Discover our<br />AI innovations';
 }
 
-// App component
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState('explore all');
 
   const projectData: Project[] = [
-    {
-      id: 'ai-core-platform',
-      year: 2023,
-      client: 'HealthAI Solutions',
-      title: 'AI-Driven Disease Prediction System',
-      imageUrl: '/AI_deses_image.jpg',
-      column: 'left',
-      tags: ['AI', 'Healthcare', 'Predictive Analytics'],
-      category: 'healthcare',
-      // The "link" property was removed to match the interface
-    },
-    {
-      id: 'edu-ai-system',
-      year: 2024,
-      client: 'SmartLearn Tech',
-      title: 'AI-Powered Adaptive Learning Platform',
-      imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1920&auto=format&fit=crop',
-      column: 'right',
-      tags: ['AI', 'Education', 'Adaptive Learning'],
-      category: 'education',
-    },
-    {
-      id: 'finance-ai',
-      year: 2024,
-      client: 'FinTech Innovations',
-      title: 'AI-Based Fraud Detection Engine',
-      imageUrl: '/fraud_detaction.jpg',
-      column: 'left',
-      tags: ['AI', 'Finance', 'Fraud Detection'],
-      category: 'finance',
-    },
-    {
-      id: 'retail-ai',
-      year: 2025,
-      client: 'RetailTech Group',
-      title: 'AI Customer Personalization Engine',
-      imageUrl: '/personlayze_image.jpg',
-      column: 'right',
-      tags: ['AI', 'Retail', 'Personalization'],
-      category: 'retail',
-    },
-    {
-      id: 'logistics-ai',
-      year: 2024,
-      client: 'Global Logistics Co.',
-      title: 'AI Supply Chain Optimization',
-      imageUrl: '/still-life-supply-chain-representation.jpg',
-      column: 'left',
-      tags: ['AI', 'Logistics', 'Optimization'],
-      category: 'logistics',
-    },
-    {
-      id: 'security-ai',
-      year: 2024,
-      client: 'SecureTech Systems',
-      title: 'AI Threat Detection Platform',
-      imageUrl: '/threat_Detaction.jpg',
-      column: 'right',
-      tags: ['AI', 'Security', 'Threat Detection'],
-      category: 'security',
-    },
-    {
-      id: 'manufacturing-ai',
-      year: 2024,
-      client: 'IndustryTech Solutions',
-      title: 'AI Predictive Maintenance System',
-      imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1920&auto=format&fit=crop',
-      column: 'left',
-      tags: ['AI', 'Manufacturing', 'Maintenance'],
-      category: 'manufacturing',
-    },
-    {
-      id: 'customer-service-ai',
-      year: 2024,
-      client: 'ServiceAI Corp',
-      title: 'AI Conversational Chatbot',
-      imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop',
-      column: 'right',
-      tags: ['AI', 'Customer Service', 'Chatbot'],
-      category: 'customer service',
-    },
-    {
-      id: 'research-ai',
-      year: 2023,
-      client: 'ResearchAI Labs',
-      title: 'AI Data Analysis Tool',
-      imageUrl: '/Data_analysis.jpg',
-      column: 'left',
-      tags: ['AI', 'Research', 'Data Analysis'],
-      category: 'research',
-    },
-    {
-      id: 'marketing-ai',
-      year: 2024,
-      client: 'MarketTech Solutions',
-      title: 'AI Campaign Optimization Platform',
-      imageUrl: '/AI Campaign Optimization.jpg',
-      column: 'right',
-      tags: ['AI', 'Marketing', 'Optimization'],
-      category: 'marketing',
-    },
-    {
-      id: 'healthcare-ai-2',
-      year: 2024,
-      client: 'MedAI Innovations',
-      title: 'AI Patient Monitoring System',
-      imageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1920&auto=format&fit=crop',
-      column: 'left',
-      tags: ['AI', 'Healthcare', 'Monitoring'],
-      category: 'healthcare',
-    },
-    {
-      id: 'education-ai-2',
-      year: 2024,
-      client: 'EduAI Systems',
-      title: 'AI Virtual Classroom Assistant',
-      imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop',
-      column: 'right',
-      tags: ['AI', 'Education', 'Virtual Assistant'],
-      category: 'education',
-    },
+    { id: 'ai-core-platform', year: 2023, client: 'HealthAI Solutions', title: 'AI-Driven Disease Prediction System', imageUrl: '/AI_deses_image.jpg', column: 'left', tags: ['AI', 'Healthcare', 'Predictive Analytics'], category: 'healthcare' },
+    { id: 'edu-ai-system', year: 2024, client: 'SmartLearn Tech', title: 'AI-Powered Adaptive Learning Platform', imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1920&auto=format&fit=crop', column: 'right', tags: ['AI', 'Education', 'Adaptive Learning'], category: 'education' },
+    { id: 'finance-ai', year: 2024, client: 'FinTech Innovations', title: 'AI-Based Fraud Detection Engine', imageUrl: '/fraud_detaction.jpg', column: 'left', tags: ['AI', 'Finance', 'Fraud Detection'], category: 'finance' },
+    { id: 'retail-ai', year: 2025, client: 'RetailTech Group', title: 'AI Customer Personalization Engine', imageUrl: '/personlayze_image.jpg', column: 'right', tags: ['AI', 'Retail', 'Personalization'], category: 'retail' },
+    { id: 'logistics-ai', year: 2024, client: 'Global Logistics Co.', title: 'AI Supply Chain Optimization', imageUrl: '/still-life-supply-chain-representation.jpg', column: 'left', tags: ['AI', 'Logistics', 'Optimization'], category: 'logistics' },
+    { id: 'security-ai', year: 2024, client: 'SecureTech Systems', title: 'AI Threat Detection Platform', imageUrl: '/threat_Detaction.jpg', column: 'right', tags: ['AI', 'Security', 'Threat Detection'], category: 'security' },
+    { id: 'manufacturing-ai', year: 2024, client: 'IndustryTech Solutions', title: 'AI Predictive Maintenance System', imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1920&auto=format&fit=crop', column: 'left', tags: ['AI', 'Manufacturing', 'Maintenance'], category: 'manufacturing' },
+    { id: 'customer-service-ai', year: 2024, client: 'ServiceAI Corp', title: 'AI Conversational Chatbot', imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop', column: 'right', tags: ['AI', 'Customer Service', 'Chatbot'], category: 'customer service' },
+    { id: 'research-ai', year: 2023, client: 'ResearchAI Labs', title: 'AI Data Analysis Tool', imageUrl: '/Data_analysis.jpg', column: 'left', tags: ['AI', 'Research', 'Data Analysis'], category: 'research' },
+    { id: 'marketing-ai', year: 2024, client: 'MarketTech Solutions', title: 'AI Campaign Optimization Platform', imageUrl: '/AI Campaign Optimization.jpg', column: 'right', tags: ['AI', 'Marketing', 'Optimization'], category: 'marketing' },
+    { id: 'healthcare-ai-2', year: 2024, client: 'MedAI Innovations', title: 'AI Patient Monitoring System', imageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1920&auto=format&fit=crop', column: 'left', tags: ['AI', 'Healthcare', 'Monitoring'], category: 'healthcare' },
+    { id: 'education-ai-2', year: 2024, client: 'EduAI Systems', title: 'AI Virtual Classroom Assistant', imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop', column: 'right', tags: ['AI', 'Education', 'Virtual Assistant'], category: 'education' },
   ];
 
   const categoryData: Category[] = [
@@ -266,21 +148,15 @@ export default function App() {
     : projectData.filter(project => project.category.toLowerCase() === selectedCategory.toLowerCase());
 
   const arrangedProjects = selectedCategory.toLowerCase() === 'explore all' 
-    ? {
-        left: filteredProjects.filter(p => p.column === 'left'),
-        right: filteredProjects.filter(p => p.column === 'right')
-      }
-    : {
-        left: filteredProjects.filter((_, index) => index % 2 === 0),
-        right: filteredProjects.filter((_, index) => index % 2 === 1)
-      };
+    ? { left: filteredProjects.filter(p => p.column === 'left'), right: filteredProjects.filter(p => p.column === 'right') }
+    : { left: filteredProjects.filter((_, index) => index % 2 === 0), right: filteredProjects.filter((_, index) => index % 2 === 1) };
 
   const dynamicHeading = getDynamicHeading(selectedCategory);
 
   return (
     <>
       <Navbar />
-      <section className="bg-black text-white pt-24 sm:pt-32 pb-16 px-4 sm:px-8 lg:px-16">
+      <section className="bg-[var(--bg-main)] text-[var(--text-main)] pt-24 sm:pt-32 pb-16 px-4 sm:px-8 lg:px-16">
         <div className="max-w-screen-2xl mx-auto mb-24">
           <ProjectFilters 
             categories={categoryData} 
@@ -289,41 +165,27 @@ export default function App() {
           />
 
           <div className="lg:hidden mb-12">
-            <p className="text-sm text-gray-400">• Our Work</p>
-            <h2 
-              className="text-4xl sm:text-6xl font-bold mt-4 leading-tight"
-              dangerouslySetInnerHTML={{ __html: dynamicHeading }}
-            />
+            <p className="text-sm text-[var(--text-muted)]">• Our Work</p>
+            <h2 className="text-4xl sm:text-6xl font-bold mt-4 leading-tight" dangerouslySetInnerHTML={{ __html: dynamicHeading }} />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 items-start">
             <div className="flex flex-col gap-16">
-              {arrangedProjects.left.map(project => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
+              {arrangedProjects.left.map(project => <ProjectCard key={project.id} project={project} />)}
             </div>
             <div className="flex flex-col gap-16">
               <div className="hidden lg:block lg:pt-8 mb-12 lg:mb-0">
-                <p className="text-sm text-gray-400">• Our Work</p>
-                <h2 
-                  className="text-4xl sm:text-6xl font-bold mt-4 leading-tight"
-                  dangerouslySetInnerHTML={{ __html: dynamicHeading }}
-                />
+                <p className="text-sm text-[var(--text-muted)]">• Our Work</p>
+                <h2 className="text-4xl sm:text-6xl font-bold mt-4 leading-tight" dangerouslySetInnerHTML={{ __html: dynamicHeading }} />
               </div>
-
-              {arrangedProjects.right.map(project => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
+              {arrangedProjects.right.map(project => <ProjectCard key={project.id} project={project} />)}
             </div>
           </div>
         </div>
 
         <style jsx>{`
           @import url('https://fonts.googleapis.com/css2?family=Product+Sans&display=swap');
-
-          section, div, p, h1, h2, h3, span, button {
-            font-family: 'Product Sans', sans-serif;
-          }
+          section, div, p, h1, h2, h3, span, button { font-family: 'Product Sans', sans-serif; }
         `}</style>
       <Footer />
       </section>

@@ -5,13 +5,9 @@ import Link from 'next/link';
 import Navbar from '@/app/components/navbar';
 import Footer from '../components/footer';
 
-// --- TYPE DEFINITIONS ---
 type BlogCategory = 'all' | 'machine learning' | 'data science' | 'ai ethics' | 'industry news' | 'tutorials';
 
-interface Author {
-  name: string;
-  avatarUrl: string;
-}
+interface Author { name: string; avatarUrl: string; }
 
 interface BlogPost {
   id: number;
@@ -22,14 +18,12 @@ interface BlogPost {
   author: Author;
 }
 
-// --- SVG ICON ---
 const ArrowIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
     <path d="M7 17L17 7M17 7H7M17 7V17" />
   </svg>
 );
 
-// --- AI-FOCUSED BLOG DATA (18 posts) ---
 const allBlogPosts: BlogPost[] = [
     { id: 1, category: 'machine learning', title: 'Demystifying Neural Networks: A Beginner\'s Guide', readTime: '12 min read', imageUrl: '/neural_network.jpg', author: { name: 'Dr. Evelyn Reed', avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80' } },
     { id: 2, category: 'data science', title: 'The Art of Feature Engineering: Transforming Data for ML', readTime: '15 min read', imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80', author: { name: 'Johnathan Chen', avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80' } },
@@ -53,7 +47,6 @@ const allBlogPosts: BlogPost[] = [
 
 const categories: BlogCategory[] = ['all', 'machine learning', 'data science', 'ai ethics', 'industry news', 'tutorials'];
 
-// --- MAIN COMPONENT ---
 const BlogsPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<BlogCategory>('all');
 
@@ -73,27 +66,23 @@ const BlogsPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      {/* Google Font Import */}
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;600&display=swap');
-        
-        main, nav, span, button, h3 {
-          font-family: 'Product Sans', sans-serif;
-        }
+        main, nav, span, button, h3 { font-family: 'Product Sans', sans-serif; }
       `}</style>
       
-      <main className="bg-black text-gray-200 min-h-screen pt-20 md:pt-24 p-4 sm:p-10 md:p-16">
+      <main className="bg-[var(--bg-main)] text-[var(--text-main)] min-h-screen pt-20 md:pt-24 p-4 sm:p-10 md:p-16">
         <header className="mb-10">
-          <span className="text-base text-gray-400">• The Blog</span>
+          <span className="text-base text-[var(--text-muted)]">• The Blog</span>
           <nav className="flex flex-wrap gap-x-4 sm:gap-x-8 gap-y-2 sm:gap-y-4 mt-5">
             {categories.map(category => (
               <button
                 key={category}
                 onClick={() => setActiveFilter(category)}
-                className={`text-2xl sm:text-3xl md:text-4xl font-medium capitalize transition-colors duration-300 ${activeFilter === category ? 'text-white' : 'text-gray-600 hover:text-white'}`}
+                className={`text-2xl sm:text-3xl md:text-4xl font-medium capitalize transition-colors duration-300 ${activeFilter === category ? 'text-[var(--text-main)]' : 'text-[var(--text-muted)] hover:text-[var(--text-main)]'}`}
               >
                 {category === 'all' ? 'explore all' : category}
-                <sup className={`text-sm sm:text-base lg:text-lg ml-1 ${activeFilter === category ? 'text-gray-400' : 'text-gray-600'}`}>
+                <sup className={`text-sm sm:text-base lg:text-lg ml-1 ${activeFilter === category ? 'text-[var(--text-muted)]' : 'text-[var(--text-muted)]'}`}>
                   {postCounts[category] || 0}
                 </sup>
               </button>
@@ -101,53 +90,37 @@ const BlogsPage: React.FC = () => {
           </nav>
         </header>
 
-        {/* --- Updated Grid Layout with Hover Effect and Link --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-10">
           {filteredPosts.map((post) => (
-<Link href={`/blogs/${post.id}`} key={post.id}>
+            <Link href={`/blogs/${post.id}`} key={post.id}>
               <article className="group cursor-pointer">
-                {/* Image container with hover effect */}
                 <div className="relative mb-4 overflow-hidden rounded-2xl">
                   <img
                     src={post.imageUrl}
                     alt={post.title}
                     className="w-full h-64 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                   />
-                  
-                  {/* Overlay that appears on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
-                  
-                  {/* Author info that slides up on hover */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
                     <div className="flex items-center gap-3">
-                      <img
-                        src={post.author.avatarUrl}
-                        alt={post.author.name}
-                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-white/20"
-                      />
+                      <img src={post.author.avatarUrl} alt={post.author.name} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-white/20" />
                       <div>
                         <p className="text-white text-sm font-medium">{post.author.name}</p>
                         <p className="text-gray-300 text-xs">Author</p>
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Decorative text overlay */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                  </div>
                 </div>
                 
-                {/* Info section */}
                 <div className="flex justify-between items-start gap-4">
                     <div>
-                        <span className="text-gray-400 text-sm">• {post.readTime}</span>
-                        <h3 className="text-white text-lg font-medium leading-snug mt-1 transition-colors duration-300 group-hover:text-blue-400">
+                        <span className="text-[var(--text-muted)] text-sm">• {post.readTime}</span>
+                        <h3 className="text-[var(--text-main)] text-lg font-medium leading-snug mt-1 transition-colors duration-300 group-hover:text-blue-400">
                             {post.title}
                         </h3>
                     </div>
-                    {/* Arrow Icon */}
                     <div className="flex-shrink-0 mt-2">
-                        <ArrowIcon className="stroke-gray-600 transition-all duration-300 group-hover:stroke-blue-400 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        <ArrowIcon className="stroke-[var(--text-muted)] transition-all duration-300 group-hover:stroke-blue-400 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </div>
                 </div>
               </article>

@@ -22,56 +22,56 @@ const LogoCard = ({ children }: { children: ReactNode }) => (
 
 // --- SVG Icon Components ---
 const PredictiveModelingIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-black">
-        <path d="M3 3V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H21" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M7 14L12 9L17 12L21 8" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white">
+        <path d="M3 3V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 14L12 9L17 12L21 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
 
 const RecommendationIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-black">
-        <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="black" strokeWidth="2" strokeLinejoin="round"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white">
+        <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
     </svg>
 );
 
 const NLPIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-black">
-        <path d="M4 7H20" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M7 4V7" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M17 4V7" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M6 12H18" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 12V18" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M9 18H15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white">
+        <path d="M4 7H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 4V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M17 4V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M6 12H18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 12V18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M9 18H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
 
 const ComputerVisionIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-black">
-        <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="black" strokeWidth="2" strokeLinejoin="round"/>
-        <circle cx="12" cy="12" r="3" stroke="black" strokeWidth="2" strokeLinejoin="round"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white">
+        <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
     </svg>
 );
 
 const MLOpsIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-black">
-        <path d="M20 12L12 4L4 12" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M4 12L12 20L20 12" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 4V20" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white">
+        <path d="M20 12L12 4L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M4 12L12 20L20 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 4V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
 
 const ModelAuditIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-black">
-        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="black" strokeWidth="2" strokeLinejoin="round"/>
-        <path d="M9 15L11 17L15 13" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M14 2V8H20" stroke="black" strokeWidth="2" strokeLinejoin="round"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white">
+        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+        <path d="M9 15L11 17L15 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14 2V8H20" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
     </svg>
 );
 
 
 const ArrowIcon = () => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
 
@@ -260,7 +260,7 @@ const HelpWith = () => {
                               Whether you're a data-rich enterprise or a startup aiming to leverage AI, we build models that fit your scale and ambition.
                           </h2>
                           <div className="inline-flex justify-center lg:justify-start">
-                              <Link href="#" className="group bg-[#c6ff00] text-black font-medium text-sm py-2 px-4 rounded-full self-start flex items-center gap-2 transition-transform hover:scale-105 mt-4">
+                              <Link href="#" className="group bg-[#102d4d] text-white font-medium text-sm py-2 px-4 rounded-full self-start flex items-center gap-2 transition-transform hover:scale-105 hover:bg-[#0d2640] mt-4">
                                   About ModelCraft
                                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
@@ -282,8 +282,8 @@ const HelpWith = () => {
                                   'Model Auditing & Ethics'
                               ].map((capability, index) => (
                                   <div key={index} className="flex items-center gap-2 justify-center lg:justify-start">
-                                      <div className="w-4 h-4 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0">
-                                          <svg className="w-3 h-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <div className="w-4 h-4 bg-[#102d4d] rounded-full flex items-center justify-center flex-shrink-0">
+                                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                           </svg>
                                       </div>
@@ -320,7 +320,7 @@ const HelpWith = () => {
                               </p>
                           </div>
                           <div className="pt-4 flex justify-center lg:justify-start">
-                              <Link href="#" className="group bg-[#c6ff00] text-black font-medium text-sm py-3 px-6 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-105">
+                              <Link href="#" className="group bg-[#102d4d] text-white font-medium text-sm py-3 px-6 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-105 hover:bg-[#0d2640]">
                                   Start a project today
                                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
@@ -435,7 +435,7 @@ const HelpWith = () => {
                           </h1>
                       </div>
                       <div className="mt-8 lg:mt-0 w-full lg:w-auto">
-                          <button className="bg-[#D4FF40] text-black font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full flex items-center justify-center gap-3 w-full lg:w-auto whitespace-nowrap transition-transform transform hover:scale-105">
+                          <button className="bg-[#102d4d] text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full flex items-center justify-center gap-3 w-full lg:w-auto whitespace-nowrap transition-transform transform hover:scale-105 hover:bg-[#0d2640]">
                               Get in touch today
                               <ArrowIcon />
                           </button>
@@ -447,7 +447,7 @@ const HelpWith = () => {
                       {/* Predictive Modeling */}
                       <div className="pb-8">
                           <div className="flex items-center gap-x-4 mb-4">
-                              <div className="bg-[#D4FF40] p-2 rounded-lg inline-flex">
+                              <div className="bg-[#102d4d] p-2 rounded-lg inline-flex">
                                   <PredictiveModelingIcon />
                               </div>
                               <h3 className="text-2xl font-bold">Predictive Modeling</h3>
@@ -461,7 +461,7 @@ const HelpWith = () => {
                       {/* Recommendation Engines */}
                       <div className="pb-8">
                           <div className="flex items-center gap-x-4 mb-4">
-                              <div className="bg-[#D4FF40] p-2 rounded-lg inline-flex">
+                              <div className="bg-[#102d4d] p-2 rounded-lg inline-flex">
                                   <RecommendationIcon />
                               </div>
                               <h3 className="text-2xl font-bold">Recommendation Engines</h3>
@@ -475,7 +475,7 @@ const HelpWith = () => {
                       {/* Natural Language Processing */}
                       <div className="pb-8">
                           <div className="flex items-center gap-x-4 mb-4">
-                              <div className="bg-[#D4FF40] p-2 rounded-lg inline-flex">
+                              <div className="bg-[#102d4d] p-2 rounded-lg inline-flex">
                                   <NLPIcon />
                               </div>
                               <h3 className="text-2xl font-bold">NLP</h3>
@@ -489,7 +489,7 @@ const HelpWith = () => {
                       {/* Computer Vision */}
                       <div className="pb-8">
                           <div className="flex items-center gap-x-4 mb-4">
-                              <div className="bg-[#D4FF40] p-2 rounded-lg inline-flex">
+                              <div className="bg-[#102d4d] p-2 rounded-lg inline-flex">
                                   <ComputerVisionIcon />
                               </div>
                               <h3 className="text-2xl font-bold">Computer Vision</h3>
@@ -503,7 +503,7 @@ const HelpWith = () => {
                       {/* MLOps & Deployment */}
                       <div className="pb-8">
                           <div className="flex items-center gap-x-4 mb-4">
-                              <div className="bg-[#D4FF40] p-2 rounded-lg inline-flex">
+                              <div className="bg-[#102d4d] p-2 rounded-lg inline-flex">
                                   <MLOpsIcon />
                               </div>
                               <h3 className="text-2xl font-bold">MLOps & Deployment</h3>
@@ -517,7 +517,7 @@ const HelpWith = () => {
                       {/* Model Auditing & Ethics */}
                       <div className="pb-8">
                           <div className="flex items-center gap-x-4 mb-4">
-                              <div className="bg-[#D4FF40] p-2 rounded-lg inline-flex">
+                              <div className="bg-[#102d4d] p-2 rounded-lg inline-flex">
                                   <ModelAuditIcon />
                               </div>
                               <h3 className="text-2xl font-bold">Model Auditing & Ethics</h3>
@@ -543,7 +543,7 @@ const HelpWith = () => {
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mt-4 leading-tight text-left">
           Trusted by industry leaders
         </h2>
-        <button className="mt-8 sm:mt-12 bg-[#C5F277] text-black font-bold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-white transition-colors duration-300 w-fit">
+        <button className="mt-8 sm:mt-12 bg-[#102d4d] text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-[#0d2640] transition-colors duration-300 w-fit">
           View all success stories
           <ArrowUpRight size={20} />
         </button>
@@ -590,9 +590,9 @@ const HelpWith = () => {
             <div className="bg-[#1C1C1C] p-6 sm:p-8 rounded-2xl h-full flex flex-col justify-between min-h-[380px] sm:min-h-[400px]">
               {/* Stars */}
               <div>
-                <div className="flex justify-center text-[#C5F277] mb-6">
+                <div className="flex justify-center mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} fill="#C5F277" strokeWidth={0} size={20} />
+                    <Star key={i} fill="#102d4d" strokeWidth={0} size={20} />
                   ))}
                 </div>
                 
@@ -642,7 +642,7 @@ const HelpWith = () => {
                           </h2>
                       </div>
                       <div className="mt-8 sm:mt-0 self-center sm:self-auto">
-                          <Link href="#" className="bg-[#c6ff00] text-black font-medium text-sm py-3 px-6 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-105">
+                          <Link href="#" className="bg-[#102d4d] text-white font-medium text-sm py-3 px-6 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-105 hover:bg-[#0d2640]">
                               View all projects
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
@@ -682,8 +682,8 @@ const HelpWith = () => {
                                           <div className="relative z-10 text-center p-8">
                                               <div className="text-white text-5xl font-bold flex items-center justify-center flex-col gap-4">
                                                   <span>Shop</span>
-                                                  <div className="w-24 h-1 bg-lime-400"></div>
-                                                  <span className="text-transparent" style={{ WebkitTextStroke: '2px #c6ff00', WebkitTextFillColor: 'transparent' }}>Smart</span>
+                                                  <div className="w-24 h-1 bg-[#102d4d]"></div>
+                                                  <span className="text-transparent" style={{ WebkitTextStroke: '2px #102d4d', WebkitTextFillColor: 'transparent' }}>Smart</span>
                                               </div>
                                           </div>
                                       </div>

@@ -30,7 +30,7 @@ function ProjectCard({ project }: { project: Project }) {
           alt={project.title}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
+        <div className="absolute inset-0 bg-[var(--bg-overlay)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
         <div className="absolute top-4 left-4 lg:top-8 lg:left-8 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
           {project.tags.map((tag: string) => (
             <span key={tag} className="bg-white/10 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full product-sans">
@@ -46,8 +46,8 @@ function ProjectCard({ project }: { project: Project }) {
           </div>
         )}
       </div>
-      <div className="pt-6 text-white">
-        <p className="text-sm text-gray-400 product-sans">
+      <div className="pt-6 text-[var(--text-main)]">
+        <p className="text-sm text-[var(--text-muted)] product-sans">
           {project.year} • {project.client}
         </p>
         <h3 className="text-xl lg:text-2xl font-medium mt-2 leading-tight product-sans">
@@ -71,12 +71,10 @@ export default function App() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: fontStyles }} />
-      <section className="bg-black text-white py-16 px-4 sm:px-8 lg:px-16 product-sans">
+      <section className="bg-[var(--bg-main)] text-[var(--text-main)] py-16 px-4 sm:px-8 lg:px-16 product-sans">
         
-        {/* --- CHANGE 1: Mobile-Only Header --- */}
-        {/* This header is visible on mobile and hidden on large screens (lg:hidden) */}
         <div className="lg:hidden mb-12">
-          <p className="text-sm text-gray-400 product-sans">• Our Work</p>
+          <p className="text-sm text-[var(--text-muted)] product-sans">• Our Work</p>
           <h2 className="text-4xl sm:text-5xl font-bold mt-4 leading-tight product-sans">Take a look at<br />our AI projects</h2>
         </div>
 
@@ -85,11 +83,8 @@ export default function App() {
             {leftColumnProjects.map(project => <ProjectCard key={project.id} project={project} />)}
           </div>
           <div className="flex flex-col gap-16">
-
-            {/* --- CHANGE 2: Desktop-Only Header --- */}
-            {/* This header is hidden by default and becomes visible as a flex container on large screens (hidden lg:flex) */}
             <div className="hidden lg:flex lg:flex-col lg:pt-8">
-              <p className="text-sm text-gray-400 product-sans">• Our Work</p>
+              <p className="text-sm text-[var(--text-muted)] product-sans">• Our Work</p>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-4 leading-tight product-sans">Take a look at<br />our AI projects</h2>
             </div>
             

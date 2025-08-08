@@ -43,10 +43,10 @@ const Team: React.FC = () => {
         }
       `}</style>
 
-      <div className="bg-black text-white min-h-screen p-4 sm:p-8 md:p-16 lg:p-24">
+      <div className="bg-[var(--bg-main)] text-[var(--text-main)] min-h-screen p-4 sm:p-8 md:p-16 lg:p-24">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12 sm:mb-16">
-            <p className="text-gray-400 text-sm tracking-widest uppercase">&bull; Our Team</p>
+            <p className="text-[var(--text-muted)] text-sm tracking-widest uppercase">&bull; Our Team</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mt-2 px-4">
               Multiple personalities, <br className="sm:hidden" /> No egos.
             </h1>
@@ -57,11 +57,11 @@ const Team: React.FC = () => {
               {duplicatedMembers.map((member, index) => {
                 const isEven = (index % teamMembers.length) % 2 === 0;
                 return (
-                  <div key={index} className={`relative bg-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg aspect-[3/4] flex-shrink-0 w-[180px] sm:w-[200px] md:w-[300px] mx-1.5 sm:mx-2 md:mx-3 ${isEven ? 'transform md:translate-y-[-1.5rem]' : 'transform md:translate-y-[2rem]'}`}>
+                  <div key={index} className={`relative bg-[var(--bg-card)] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg aspect-[3/4] flex-shrink-0 w-[180px] sm:w-[200px] md:w-[300px] mx-1.5 sm:mx-2 md:mx-3 ${isEven ? 'transform md:translate-y-[-1.5rem]' : 'transform md:translate-y-[2rem]'}`}>
                     <img src={member.avatar} alt={member.name} className={`w-full h-full object-cover rounded-2xl sm:rounded-3xl ${member.blurred ? "blur-md scale-105" : ""}`}/>
-                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-[#102d4d] text-white rounded-full p-1 sm:p-1.5 w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm font-bold">+</div>
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-[var(--brand-primary)] text-white rounded-full p-1 sm:p-1.5 w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm font-bold">+</div>
                     <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/90 to-transparent rounded-2xl sm:rounded-3xl">
-                      <h3 className="text-sm sm:text-lg font-semibold">{member.name}</h3>
+                      <h3 className="text-sm sm:text-lg font-semibold text-white">{member.name}</h3>
                       <p className="text-gray-300 text-xs sm:text-sm">{member.role}</p>
                     </div>
                   </div>
@@ -72,7 +72,7 @@ const Team: React.FC = () => {
 
           <div className="mt-12 sm:mt-16 md:mt-24">
             <div className="flex justify-center mb-12 sm:mb-16">
-              <button className="flex items-center space-x-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#102d4d] text-white rounded-full font-bold text-xs sm:text-sm transition-transform duration-300 hover:scale-105">
+              <button className="flex items-center space-x-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[var(--brand-primary)] text-white rounded-full font-bold text-xs sm:text-sm transition-transform duration-300 hover:scale-105">
                 <span>Meet the whole Team</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -80,14 +80,13 @@ const Team: React.FC = () => {
               </button>
             </div>
             
-            {/* Mobile-first stats grid */}
             <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center px-4 sm:px-0 sm:text-left">
-                  <h4 className="text-white text-base sm:text-lg font-normal mb-3 sm:mb-2 tracking-wide">{stat.title}</h4>
-                  <div className="w-12 sm:w-16 h-0.5 bg-gray-600 mb-4 sm:mb-6 mx-auto sm:mx-0"></div>
-                  <p className="stat-number text-white mb-4 sm:mb-6">{stat.value}</p>
-                  <p className="text-gray-400 text-sm sm:text-sm leading-relaxed max-w-xs mx-auto sm:max-w-none sm:mx-0">{stat.description}</p>
+                  <h4 className="text-[var(--text-main)] text-base sm:text-lg font-normal mb-3 sm:mb-2 tracking-wide">{stat.title}</h4>
+                  <div className="w-12 sm:w-16 h-0.5 bg-[var(--border-main)] mb-4 sm:mb-6 mx-auto sm:mx-0"></div>
+                  <p className="stat-number text-[var(--text-main)] mb-4 sm:mb-6">{stat.value}</p>
+                  <p className="text-[var(--text-muted)] text-sm sm:text-sm leading-relaxed max-w-xs mx-auto sm:max-w-none sm:mx-0">{stat.description}</p>
                 </div>
               ))}
             </div>

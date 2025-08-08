@@ -78,10 +78,9 @@ const ProcessMiningIcon = () => (
 
 const ArrowIcon = () => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
-
 
 // --- Main Component ---
 
@@ -267,8 +266,8 @@ const HelpWith = () => {
                               From small businesses to large corporations, we build automation solutions that scale with your needs and deliver immediate ROI.
                           </h2>
                           <div className="inline-flex justify-center lg:justify-start">
-                              <Link href="#" className="group bg-[#c6ff00] text-black font-medium text-sm py-2 px-4 rounded-full self-start flex items-center gap-2 transition-transform hover:scale-105 mt-4">
-                                  About AutomateIQ
+                              <Link href="#" className="group bg-[#102d4d] text-white font-medium text-sm py-2 px-4 rounded-full self-start flex items-center gap-2 transition-transform hover:scale-105 hover:bg-[#0d2640] mt-4">
+s                                  About AutomateIQ
                                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
                                   </svg>
@@ -289,8 +288,8 @@ const HelpWith = () => {
                                   'Process Mining & Discovery'
                               ].map((capability, index) => (
                                   <div key={index} className="flex items-center gap-2 justify-center lg:justify-start">
-                                      <div className="w-4 h-4 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0">
-                                          <svg className="w-3 h-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <div className="w-4 h-4 bg-[#102d4d] rounded-full flex items-center justify-center flex-shrink-0">
+                                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                           </svg>
                                       </div>
@@ -327,7 +326,7 @@ const HelpWith = () => {
                               </p>
                           </div>
                           <div className="pt-4 flex justify-center lg:justify-start">
-                              <Link href="#" className="group bg-[#c6ff00] text-black font-medium text-sm py-3 px-6 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-105">
+                              <Link href="#" className="group bg-[#102d4d] text-white font-medium text-sm py-3 px-6 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-105 hover:bg-[#0d2640]">
                                   Start a project today
                                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17l9.2-9.2M17 17V7H7" />
@@ -442,7 +441,7 @@ const HelpWith = () => {
                           </h1>
                       </div>
                       <div className="mt-8 lg:mt-0 w-full lg:w-auto">
-                          <button className="bg-[#D4FF40] text-black font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full flex items-center justify-center gap-3 w-full lg:w-auto whitespace-nowrap transition-transform transform hover:scale-105">
+                          <button className="bg-[#102d4d] text-white font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-full flex items-center justify-center gap-3 w-full lg:w-auto whitespace-nowrap transition-transform transform hover:scale-105 hover:bg-[#0d2640]">
                               Get in touch today
                               <ArrowIcon />
                           </button>
