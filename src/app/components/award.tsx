@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 
-// You can define a type for an award for better code quality
+// A type for an award for better code quality
 interface AwardInfo {
   id: number;
   imageUrl: string;
@@ -20,118 +20,65 @@ const awardsData: AwardInfo[] = [
   { id: 8, imageUrl: 'https://images.unsplash.com/photo-1580894782765-c3c9edd4b08e?w=400&h=500&fit=crop', altText: 'Mobile Excellence Award for Coloco' },
 ];
 
-// A small component for the arrow icon to keep the main component clean
+// A small component for the arrow icon
 const ArrowIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6"
-  >
-    <path
-      d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6">
+    <path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 export default function Award() {
   return (
     <>
+      {/* This style block contains the animation keyframes. 
+        For better organization, consider moving these to your global CSS file. 
+      */}
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Product+Sans&display=swap');
-    
-        nav, span, button, h2, p, a {
-          font-family: 'Product Sans', sans-serif;
-        }
-
-        /* Reset any inherited text alignment specifically for award section */
-        .award-section * {
-          text-align: inherit;
-        }
-        
-        .award-small-text {
-          text-align: left !important;
-        }
-        
-        .award-header-content {
-          text-align: left !important;
-        }
-        
-        .award-header-title {
-          text-align: left !important;
-        }
-
         @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
+        .scroll-animation { animation: scroll 30s linear infinite; }
 
-        .scroll-animation {
-          animation: scroll 30s linear infinite;
-        }
-
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
       `}</style>
-      
-      <div className="award-section bg-black text-white w-full overflow-hidden">
+
+      {/* Use global theme variables for background and text colors */}
+      <section className="bg-[var(--bg-main)] text-[var(--text-main)] w-full overflow-hidden">
         <div className="mx-auto max-w-[1600px] py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           
-          {/* Top small text */}
-          <p className="award-small-text mb-6 text-base sm:text-lg text-left">
+          {/* Use the global muted text color variable */}
+          <p className="mb-6 text-base sm:text-lg text-left text-[var(--text-muted)]">
             • We don't pay for awards
           </p>
 
-          {/* --- Header Section --- */}
-          <div className="award-header-content flex flex-col sm:flex-row justify-between items-start mb-12 sm:mb-16">
-            <h2 className="award-header-title text-5xl md:text-6xl lg:text-7xl font-semi tracking-tighter max-w-3xl leading-tight text-left">
+          <div className="flex flex-col sm:flex-row justify-between items-start mb-12 sm:mb-16">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-semi tracking-tighter max-w-3xl leading-tight text-left">
               We win awards and get recognised for our work
             </h2>
+            
+            {/* This button now uses standard Tailwind classes for styling and hover effects,
+              removing the need for JavaScript event handlers.
+            */}
             <a
               href="#" // Replace with your link
-              className="mt-12 bg-[#102d4d] text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 hover:bg-white hover:text-black transition-colors duration-300"
+              className="cta-button mt-12 font-bold py-3 px-6 rounded-full flex items-center gap-2 transition-colors duration-300 bg-[#102d4d] text-white hover:bg-white hover:text-[#102d4d]"
             >
               You could be next
               <ArrowIcon />
             </a>
           </div>
 
-          {/* --- Horizontally Scrolling Awards Gallery --- */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden scrollbar-hide">
             <div className="flex space-x-4 scroll-animation">
-              {/* First set of awards */}
-              {awardsData.map((award) => (
-                <div key={award.id} className="flex-shrink-0 w-[200px] h-[250px] sm:w-[220px] sm:h-[280px]">
+              {/* Render awards twice for a seamless loop */}
+              {[...awardsData, ...awardsData].map((award, index) => (
+                <div key={`${award.id}-${index}`} className="flex-shrink-0 w-[200px] h-[250px] sm:w-[220px] sm:h-[280px]">
                   <img
                     src={award.imageUrl}
                     alt={award.altText}
-                    className="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  />
-                </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {awardsData.map((award) => (
-                <div key={`duplicate-${award.id}`} className="flex-shrink-0 w-[200px] h-[250px] sm:w-[220px] sm:h-[280px]">
-                  <img
-                    src={award.imageUrl}
-                    alt={award.altText}
-                    className="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    className="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
                   />
                 </div>
               ))}
@@ -139,7 +86,7 @@ export default function Award() {
           </div>
 
         </div>
-      </div>
+      </section>
     </>
   );
 }
