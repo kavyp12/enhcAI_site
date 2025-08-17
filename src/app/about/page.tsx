@@ -1,3 +1,4 @@
+// aboutpage.tsx
 "use client";
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/app/components/navbar';
@@ -83,7 +84,7 @@ export default function AboutPage() {
             </div>
             <div className="flex-1 space-y-6 text-[var(--text-muted)] text-base lg:text-lg leading-relaxed text-center lg:text-left">
               <p>
-                Founded in 2020, enhcAI is at the forefront of the artificial intelligence revolution. We specialize in creating bespoke AI solutions in{' '}
+                Founded in 2022, enhcAI is at the forefront of the artificial intelligence revolution. We specialize in creating bespoke AI solutions in{' '}
                 <span className="underline">Machine Learning</span>,{' '}
                 <span className="underline">Deep Learning</span>,{' '}
                 <span className="underline">Computer Vision</span>, and{' '}

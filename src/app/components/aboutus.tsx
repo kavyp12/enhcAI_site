@@ -31,14 +31,14 @@ export default function Aboutus() {
                 <span className="text-[var(--text-muted)]">Innovating the Future</span>
               </div>
               <h1 className="text-3xl lg:text-4xl font-normal leading-tight tracking-tight">
-                An AI innovation company in San Francisco that cares about solving complex problems for your brand, no matter the size or industry.
+                An AI innovation company in Ahmedabad, Gujarat that cares about solving complex problems for your brand, no matter the size or industry.
               </h1>
             </div>
 
             <div className="space-y-8 text-[var(--text-muted)]">
               <div className="flex flex-col space-y-4">
                 <p className="text-base lg:text-lg leading-relaxed">
-                  Founded in 2018, AIInnovate is a leading AI solutions provider based in San Francisco, specialising in{' '}
+                  Founded in 2022, AIInnovate is a leading AI solutions provider based in Shivalik Shilp, Ahmedabad, Gujarat, specialising in{' '}
                   <span className="underline">Machine Learning</span>,{' '}
                   <span className="underline">Data Science</span>,{' '}
                   <span className="underline">Computer Vision</span>, and{' '}

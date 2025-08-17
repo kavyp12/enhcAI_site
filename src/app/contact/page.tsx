@@ -1,3 +1,4 @@
+// contactpage.tsx
 "use client";
 
 import React, { useState } from 'react';
@@ -90,7 +91,7 @@ const ContactPage = () => {
                     Go to Project Planner
                     <div className="bg-white/20 rounded-full p-1 transition-transform group-hover:rotate-45"><ArrowUpRightIcon className="w-5 h-5" /></div>
                 </a>
-                <p className="text-sm text-[var(--text-muted)]">Hate contact forms? <a href="mailto:hello@madebyenhc.co.uk" className="text-[var(--text-main)] font-semibold hover:text-blue-400 transition-colors">hello@madebyenhc.co.uk</a></p>
+                <p className="text-sm text-[var(--text-muted)]">Hate contact forms? <a href="mailto:hello@madebycontact@enhc.tech" className="text-[var(--text-main)] font-semibold hover:text-blue-400 transition-colors">hello@madebycontact@enhc.tech</a></p>
             </div>
             <div className="w-full lg:animate-fade-in-right lg:translate-y-8">
                 <form className="space-y-6">
@@ -123,12 +124,12 @@ const ContactPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 bg-[var(--bg-card)] rounded-3xl p-6 sm:p-12 items-center">
                 <div className="lg:col-span-3 flex flex-col justify-between h-full order-2 lg:order-1 mt-8 lg:mt-0 text-center lg:text-left">
                     <div>
-                        <h2 className="text-4xl sm:text-5xl font-semibold tracking-tighter mb-4 text-[var(--text-main)]">Our Manchester<br /> Studio</h2>
-                        <p className="text-[var(--text-muted)] mb-8 lg:mb-12 leading-relaxed max-w-lg mx-auto lg:mx-0">Just a short drive from Manchester city centre,<br /> our Studio is in a very convenient location, near <br /> two train stations, a motorway, and the east<br /> Lancashire road.</p>
+                        <h2 className="text-4xl sm:text-5xl font-semibold tracking-tighter mb-4 text-[var(--text-main)]">Our Ahmedabad<br /> Studio</h2>
+                        <p className="text-[var(--text-muted)] mb-8 lg:mb-12 leading-relaxed max-w-lg mx-auto lg:mx-0">Located in Shivalik Shilp, our studio is in a convenient location in Ahmedabad, Gujrat.</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8 lg:mb-12">
                             <div>
                                 <h3 className="text-sm text-gray-500 mb-3 font-medium tracking-wide">Studio Address</h3>
-                                <p className="text-[var(--text-main)] leading-relaxed">MadeByenhc<br />1 Gibfield Park Avenue<br />Atherton Manchester<br />M46 0SU</p>
+                                <p className="text-[var(--text-main)] leading-relaxed">MadeByenhc<br />Shivalik Shilp<br />Ahmedabad<br />Gujrat</p>
                             </div>
                             <div>
                                 <h3 className="text-sm text-gray-500 mb-3 font-medium tracking-wide lg:-translate-x-20">Follow us</h3>

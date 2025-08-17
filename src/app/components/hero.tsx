@@ -1,3 +1,4 @@
+// hero.tsx
 "use client"
 import React from 'react';
 
@@ -79,7 +80,7 @@ export default function Hero() {
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[var(--brand-primary)] to-white">
                     and automation
                   </span>
-                  <span className="block">company in Silicon Valley</span>
+                  <span className="block">company in Ahmedabad</span>
                 </h1>
                 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start animate-fade-in-up delay-300">
@@ -101,8 +102,8 @@ export default function Hero() {
           <div className="max-w-4xl space-y-8">
             <p className="text-[var(--text-main)] text-xl sm:text-2xl lg:text-3xl font-semibold leading-snug tracking-tight product-sans">
               An independent artificial intelligence and automation company based in{' '}
-              <span className="text-[var(--brand-primary)] relative font-bold">Silicon Valley<span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-primary)]/50"></span></span>{' '}
-              established in <span className="text-[var(--brand-primary)] font-bold">2020</span> specializing in machine learning, neural networks, natural language processing, and cutting-edge AI solutions that{' '}
+              <span className="text-[var(--brand-primary)] relative font-bold">Ahmedabad, Gujarat<span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-primary)]/50"></span></span>{' '}
+              established in <span className="text-[var(--brand-primary)] font-bold">2022</span> specializing in machine learning, neural networks, natural language processing, and cutting-edge AI solutions that{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand-primary)] via-[--text-main] to-[var(--brand-primary)] font-bold">transform businesses</span>{' '}
               and revolutionize industries through intelligent automation, predictive analytics, and advanced AI-driven insights.
             </p>

@@ -1,3 +1,4 @@
+// footer.tsx
 "use client";
 import React from "react";
 
@@ -21,7 +22,7 @@ export default function Footer() {
   const socialLinks = [ { icon: IconLinkedin, href: "#", "aria-label": "LinkedIn" }, { icon: IconX, href: "#", "aria-label": "X (formerly Twitter)" }, { icon: IconGithub, href: "#", "aria-label": "GitHub" }, { icon: IconInstagram, href: "#", "aria-label": "Instagram" }, { icon: IconBehance, href: "#", "aria-label": "Behance" } ];
   const learnLinks = ["About", "Culture", "Testimonials", "Processes", "FAQs", "Branding FAQs", "Blog"];
   const exploreLinks = [ { text: "Home" }, { text: "Work", isNew: true }, { text: "Services" }, { text: "Careers" }, { text: "Sectors" }, { text: "HexTest" }, { text: "Contact" } ];
-  const contactDetails = [ { icon: "📞", text: "01942 694 596", href: "tel:01942694596" }, { icon: "✉️", text: "hello@madebyenhc.co.uk", href: "mailto:hello@madebyenhc.co.uk" }, { icon: "📍", text: "MadeByenhc\n1 Gibfield Park Avenue\nAtherton Manchester\nM46 0SU", href: "#" }, { icon: "///", text: "topped.little.pirate", href: "#" } ];
+  const contactDetails = [ { icon: "📞", text: "+91 9313153036", href: "tel:+919313153036" }, { icon: "✉️", text: "contact@enhc.tech", href: "mailto:contact@enhc.tech" }, { icon: "📍", text: "MadeByenhc\nShivalik Shilp\nAhmedabad\nGujrat", href: "#" }, { icon: "///", text: "topped.little.pirate", href: "#" } ];
 
   return (
     <>
@@ -63,17 +64,17 @@ export default function Footer() {
             </div>
           </div>
           <div className="text-center py-16 lg:py-24">
-            <h1 className="text-5xl sm:text-7xl md:text-9xl lg:text-[180px] font-extrabold tracking-tighter text-[var(--text-main)] leading-none product-sans">Crafting since 2010</h1>
+            <h1 className="text-5xl sm:text-7xl md:text-9xl lg:text-[180px] font-extrabold tracking-tighter text-[var(--text-main)] leading-none product-sans">Crafting since 2022</h1>
           </div>
           <div className="border-t border-[var(--border-main)] rounded-t-lg py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-gray-500 text-center">
             <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
               <span className="font-bold text-[var(--text-main)] product-sans">enhc.</span>
               <span className="product-sans">© MadeByenhc Ltd 2025</span>
-              <span className="hidden md:inline">|</span>
-              <span className="product-sans">Company Reg Number 10529058</span>
+              {/* <span className="hidden md:inline">|</span> */}
+              {/* <span className="product-sans">Company Reg Number 10529058</span> */}
             </div>
             <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
-              <span className="product-sans">Web Design Manchester</span>
+              <span className="product-sans">Web Design Ahmedabad</span>
               <span className="hidden md:inline">|</span>
               <span className="product-sans">All Rights Reserved</span>
               <span className="hidden md:inline">|</span>
