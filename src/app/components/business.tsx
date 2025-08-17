@@ -13,9 +13,9 @@ const fontStyles = `
 const ArrowIcon = () => (<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>);
 
 const services = [
-    { title: "ML Models", description: "Custom machine learning models to uncover insights and automate complex processes.", image: "https://images.unsplash.com/photo-1599441215132-1cf6d12a6d44?w=400&h=250&fit=crop&crop=center" },
+    { title: "ML Models", description: "Custom machine learning models to uncover insights and automate complex processes.", image: "/machine_learning.jpg" },
     { title: "NLP", description: "Harnessing the power of language with advanced NLP solutions for sentiment analysis and more.", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop&crop=center" },
-    { title: "Vision AI", description: "State-of-the-art computer vision for image recognition, object detection, and video analysis.", image: "https://images.unsplash.com/photo-1617296532431-dce95166dc7e?w=400&h=250&fit=crop&crop=center" },
+    { title: "Vision AI", description: "State-of-the-art computer vision for image recognition, object detection, and video analysis.", image: "/vision_AI.jpg" },
     { title: "Analytics", description: "Leveraging predictive analytics to forecast trends and provide actionable intelligence.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center" },
     { title: "AI Strategy", description: "Expert consulting to help you identify opportunities and create a roadmap for AI integration.", image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=250&fit=crop&crop=center" }
 ];
